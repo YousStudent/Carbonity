@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (mail($to, $subject, $body, $headers)) {
         echo "Votre message a été envoyé avec succès.";
     } else {
-        echo "Arrête de forcer mec ! I9or ogayonk !";
+        echo "Une erreur s'est produite lors de l'envoi de votre message.";
     }
 } else {
     echo "Une erreur s'est produite.";
