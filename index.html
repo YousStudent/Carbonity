@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carbonity - Fournisseur de solutions de mobilités intelligentes</title>
+    <title>Page d'Accueil</title>
     <!-- Inclure Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Inclure Google Fonts -->
@@ -13,43 +13,29 @@
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #ffffff;
+            background-color: #f4f4f4;
             color: #333;
         }
         .container {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 20px;
+            width: 80%;
+            margin: 0 auto;
+            padding-top: 20px;
         }
-        .logo-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        .logo {
-            width: 150px;
-            margin-bottom: 20px;
-        }
-        .tagline {
-            font-size: 1.2em;
-            margin-bottom: 20px;
-        }
-        .arrive-soon {
-            font-size: 1.5em;
-            font-weight: bold;
-            margin-bottom: 40px;
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .contact-link {
-            display: inline-flex;
+            display: flex;
             align-items: center;
             text-decoration: none;
             color: #007BFF;
             font-size: 18px;
+            margin-top: 20px;
             cursor: pointer;
             transition: color 0.3s;
         }
@@ -114,36 +100,25 @@
         button:hover {
             background: #0056b3;
         }
-        .background-image {
-            background: url('https://www.canva.com/design/DAGF9J4y6DY/ulvyWIxY0tjgGdUa7PKr4A/edit') no-repeat center center;
-            background-size: cover;
-            width: 100%;
-            height: 100vh;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            opacity: 0.2;
-        }
         @media only screen and (max-width: 768px) {
             .container {
                 width: 90%;
+            }
+            .contact-link {
+                font-size: 16px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="background-image"></div>
     <div class="container">
-        <div class="logo-section">
-            <img src="/mnt/data/mon-slide-canva.jpg" alt="Logo Carbonity" class="logo">
-            <div class="tagline">FOURNISSEUR DE SOLUTIONS DE MOBILITÉS INTELLIGENTES</div>
-            <div class="arrive-soon">ARRIVE BIENTÔT</div>
-        </div>
+        <!-- Icône et texte de contact par email -->
         <div class="contact-link" id="contactButton">
             <i class="fas fa-envelope"></i>
             <span>Prise de contact</span>
         </div>
+        <!-- Image -->
+        <img src="mon-slide-canva.jpg" alt="Slide Canva">
     </div>
 
     <!-- Pop-up pour le formulaire de contact -->
