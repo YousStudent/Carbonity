@@ -107,7 +107,7 @@
         <div class="modal-content">
             <span class="close" id="closeButton">&times;</span>
             <h2>Prise de contact</h2>
-            <form id="contactForm" method="POST">
+            <form id="contactForm" action="https://formspree.io/f/xleqkayr" method="POST">
                 <input type="text" id="name" name="name" placeholder="Nom" required>
                 <input type="email" id="email" name="email" placeholder="Email" required>
                 <textarea id="message" name="message" rows="4" placeholder="Message" required></textarea>
@@ -130,37 +130,34 @@
             }
         };
 
-        // AJAX pour envoyer les données du formulaire
+        // Notification après l'envoi du formulaire
         document.getElementById('contactForm').addEventListener('submit', function(event) {
-            // Empêcher le formulaire de se soumettre normalement
-            event.preventDefault();
+            event.preventDefault(); // Empêcher l'envoi du formulaire normal
+            const formData = new FormData(this);
 
-            // Récupérer les valeurs des champs de formulaire
-            var name = document.getElementById('name').value;
-            var email = document.getElementById('email').value;
-            var message = document.getElementById('message').value;
-
-            // Créer un objet FormData pour les données du formulaire
-            var formData = new FormData();
-            formData.append('name', name);
-            formData.append('email', email);
-            formData.append('message', message);
-
-            // Envoyer les données à votre script PHP via AJAX
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', 'send_email.php', true);
-            xhr.onload = function() {
-                if (xhr.status === 200) {
-                    // Afficher un message de confirmation à l'utilisateur
-                    alert(xhr.responseText);
-                    // Réinitialiser le formulaire
-                    document.getElementById('contactForm').reset();
-                } else {
-                    // Afficher un message d'erreur en cas de problème
-                    alert('Une erreur s\'est produite lors de l\'envoi du formulaire.');
+            fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
                 }
-            };
-            xhr.send(formData);
+            }).then(response => {
+                if (response.ok) {
+                    alert('Votre message a été envoyé avec succès.');
+                    document.getElementById('contactForm').reset();
+                    document.getElementById('contactModal').style.display = 'none';
+                } else {
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            alert(data["errors"].map(error => error["message"]).join(", "));
+                        } else {
+                            alert('Une erreur s\'est produite lors de l\'envoi du formulaire.');
+                        }
+                    });
+                }
+            }).catch(error => {
+                alert('Une erreur s\'est produite lors de l\'envoi du formulaire.');
+            });
         });
     </script>
 </body>
