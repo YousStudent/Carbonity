@@ -6,11 +6,15 @@
     <title>Page d'Accueil</title>
     <!-- Inclure Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Inclure Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
         }
         .container {
             width: 80%;
@@ -20,20 +24,27 @@
         img {
             max-width: 100%;
             height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .contact-link {
             display: flex;
             align-items: center;
             text-decoration: none;
-            color: #000;
+            color: #007BFF;
             font-size: 18px;
             margin-top: 20px;
             cursor: pointer;
+            transition: color 0.3s;
         }
         .contact-link i {
             margin-right: 8px;
         }
-        /* Styles pour le pop-up */
+        .contact-link:hover {
+            color: #0056b3;
+        }
         .modal {
             display: none;
             position: fixed;
@@ -44,6 +55,7 @@
             background: rgba(0, 0, 0, 0.5);
             justify-content: center;
             align-items: center;
+            transition: opacity 0.3s;
         }
         .modal-content {
             background: white;
@@ -51,6 +63,7 @@
             border-radius: 8px;
             width: 300px;
             text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .close {
             position: absolute;
@@ -58,6 +71,11 @@
             right: 10px;
             font-size: 24px;
             cursor: pointer;
+            color: #333;
+            transition: color 0.3s;
+        }
+        .close:hover {
+            color: #007BFF;
         }
         form {
             display: flex;
@@ -68,6 +86,7 @@
             padding: 10px;
             border-radius: 5px;
             border: 1px solid #ccc;
+            font-family: 'Roboto', sans-serif;
         }
         button {
             padding: 10px;
@@ -76,11 +95,11 @@
             background: #007BFF;
             color: white;
             cursor: pointer;
+            transition: background 0.3s;
         }
         button:hover {
             background: #0056b3;
         }
-        /* Media query pour la version responsive */
         @media only screen and (max-width: 768px) {
             .container {
                 width: 90%;
@@ -120,13 +139,16 @@
         // JavaScript pour ouvrir et fermer le pop-up
         document.getElementById('contactButton').onclick = function() {
             document.getElementById('contactModal').style.display = 'flex';
+            document.getElementById('contactModal').style.opacity = '1';
         };
         document.getElementById('closeButton').onclick = function() {
             document.getElementById('contactModal').style.display = 'none';
+            document.getElementById('contactModal').style.opacity = '0';
         };
         window.onclick = function(event) {
             if (event.target == document.getElementById('contactModal')) {
                 document.getElementById('contactModal').style.display = 'none';
+                document.getElementById('contactModal').style.opacity = '0';
             }
         };
 
