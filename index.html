@@ -19,20 +19,26 @@
             max-width: 100%;
             height: auto;
         }
-        .contact-icon {
+        .contact-link {
             position: absolute;
             top: 10px;
             right: 10px;
-            font-size: 24px;
-            color: #000;
+            display: flex;
+            align-items: center;
             text-decoration: none;
+            color: #000;
+            font-size: 24px;
+        }
+        .contact-link i {
+            margin-right: 8px;
         }
     </style>
 </head>
 <body>
-    <!-- Icône de contact par email -->
-    <a href="mailto:example@example.com" class="contact-icon">
+    <!-- Icône et texte de contact par email -->
+    <a href="mailto:example@example.com" class="contact-link">
         <i class="fas fa-envelope"></i>
+        <span>Prise de contact</span>
     </a>
     <img src="mon-slide-canva.jpg" alt="Slide Canva">
 </body>
