@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page d'Accueil</title>
+    <!-- Inclure Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             display: flex;
@@ -11,14 +13,27 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            position: relative;
         }
         img {
             max-width: 100%;
             height: auto;
         }
+        .contact-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            color: #000;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
+    <!-- Icône de contact par email -->
+    <a href="mailto:example@example.com" class="contact-icon">
+        <i class="fas fa-envelope"></i>
+    </a>
     <img src="mon-slide-canva.jpg" alt="Slide Canva">
 </body>
 </html>
