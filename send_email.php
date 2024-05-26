@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = $_POST['message'];
 
     // Adresse e-mail où envoyer les informations
-    $to = "votre_adresse_email@example.com";
+    $to = "youssouf.outgda@gmail.com";
 
     // Objet du mail
     $subject = "PRISE DE CONTACT CARBONITY";
