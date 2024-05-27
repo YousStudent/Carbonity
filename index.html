@@ -36,8 +36,9 @@
         }
         .logo {
             width: 400px;
+            height: 400px;
             animation: bounceIn 2s ease-out 1;
-            object-fit: cover; /* Ajuster pour ne pas cacher le texte */
+            object-fit: cover;
         }
         @keyframes bounceIn {
             0% {
@@ -68,16 +69,15 @@
             width: 100%;
             max-width: 800px;
             display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            background-color: #b0b0b0;
+            flex-direction: column;
+            align-items: center;
+            background-color: #d3d3d3;
             padding: 20px;
             text-align: left;
-            margin-bottom: 0;
-            border: none;
+            margin-bottom: 20px;
         }
         .info-box {
-            flex: 1;
+            width: 100%;
             padding: 10px;
         }
         .info-box h3 {
@@ -85,7 +85,8 @@
         }
         .info-box p {
             margin-bottom: 10px;
-            white-space: pre-line; /* Pour permettre les sauts de ligne */
+            text-align: justify;
+            white-space: pre-line;
         }
         .info-box form {
             display: flex;
@@ -103,21 +104,16 @@
             color: white;
             cursor: pointer;
             transition: background 0.3s;
+            margin-left: 10px;
         }
         .info-box button:hover {
             background: #003d80;
         }
-        .separator {
-            width: 2px;
-            background-color: #ccc;
-            margin: 0 10px;
-        }
         .social-section {
             width: 100%;
             max-width: 800px;
-            background-color: #b0b0b0;
+            background-color: #d3d3d3;
             padding: 20px;
-            margin-bottom: 0;
             text-align: center;
         }
         .social-section a {
@@ -131,7 +127,7 @@
         .trust-section {
             width: 100%;
             max-width: 800px;
-            background-color: #004080;
+            background-color: #003366;
             padding: 20px;
             text-align: center;
             color: white;
@@ -256,10 +252,8 @@
                 flex-direction: column;
                 text-align: center;
             }
-            .separator {
-                display: none;
-            }
             .info-box {
+                width: 100%;
                 margin-bottom: 20px;
             }
             .social-section a {
@@ -283,13 +277,12 @@
                 <h3>Notre Vision</h3>
                 <p>Carbonity a vocation de devenir un acteur incontournable dans le conseil vers les mobilités de demain.
 Qu'elles tendent vers la décarbonation, qu'elles soient douces, les mobilités seront surtout intelligentes.
-                Nos solutions, mobilisant la Data via des technologies comme l'IA, pourront élaborer des Plans de Mobilités et
-                réaliser des audits de flottes de véhicules.</p>
+Nos solutions, mobilisant la Data via des technologies comme l'IA, pourront élaborer des Plans de Mobilités et
+réaliser des audits de flottes de véhicules.</p>
             </div>
-            <div class="separator"></div>
             <div class="info-box">
                 <h3>Contact</h3>
-                <div class="subtitle">être averti au lancement du site</div>
+                <div class="subtitle">Être averti au lancement du site</div>
                 <form id="emailForm">
                     <input type="email" id="email" placeholder="renseigner votre e-mail" required>
                     <button type="submit">Envoyer</button>
