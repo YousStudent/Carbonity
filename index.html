@@ -15,6 +15,7 @@
             padding: 0;
             background-color: #ffffff;
             color: #333;
+            overflow-x: hidden; /* Pour éviter le défilement horizontal */
         }
         .container {
             width: 100%;
@@ -35,7 +36,23 @@
         }
         .logo {
             width: 400px;
-            margin-bottom: 20px;
+            animation: bounceIn 2s ease-out 1;
+        }
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.3);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                transform: scale(1);
+            }
         }
         .tagline {
             font-size: 1.2em;
@@ -52,7 +69,7 @@
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            background-color: #e0e0e0;
+            background-color: #cccccc;
             padding: 20px;
             border-radius: 8px;
             margin-bottom: 20px;
@@ -98,7 +115,7 @@
         .social-section {
             width: 100%;
             max-width: 800px;
-            background-color: #e0e0e0;
+            background-color: #cccccc;
             padding: 20px;
             border-radius: 8px;
             margin-bottom: 20px;
@@ -115,7 +132,7 @@
         .trust-section {
             width: 100%;
             max-width: 800px;
-            background-color: #007bff;
+            background-color: #0056b3;
             padding: 20px;
             border-radius: 8px;
             margin-bottom: 20px;
@@ -137,12 +154,12 @@
             font-size: 0.9em;
         }
         .footer a {
-            color: #007bff;
+            color: #0056b3;
             text-decoration: none;
             transition: color 0.3s;
         }
         .footer a:hover {
-            color: #0056b3;
+            color: #003d80;
         }
         .modal {
             display: none;
@@ -276,12 +293,12 @@
             <div class="separator"></div>
             <div class="info-box">
                 <h3>Contact</h3>
-                <div class="subtitle">Être averti au lancement du site</div>
-                <form id="emailForm" action="#" method="POST">
-                    <input type="email" id="email" name="email" placeholder="Renseigner votre e-mail" required>
+                <div class="subtitle">être averti au lancement du site</div>
+                <form id="emailForm">
+                    <input type="email" id="email" placeholder="renseigner votre e-mail" required>
                     <button type="submit">Envoyer</button>
                 </form>
-                <div class="contact-link" id="contactButton">
+                <div id="contactButton" class="contact-link">
                     <i class="fas fa-envelope"></i>&nbsp; Prise de contact
                 </div>
             </div>
