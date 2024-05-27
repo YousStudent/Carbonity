@@ -57,10 +57,6 @@
             background-color: #f0f0f0;
         }
 
-        .section:nth-child(even) {
-            background-color: #e0e0e0;
-        }
-
         .section:nth-child(1),
         .trust-section {
             background-color: #ffffff;
@@ -207,6 +203,10 @@
             animation: slideInRight 2s forwards;
         }
 
+        .section.highlight:hover {
+            background-color: #f0f0f0;
+        }
+
         @keyframes slideInLeft {
             0% {
                 opacity: 0;
@@ -229,7 +229,6 @@
                 opacity: 1;
                 transform: translateX(0);
             }
-  
         }
     </style>
 </head>
@@ -241,7 +240,6 @@
         <div class="tagline">FOURNISSEUR DE SOLUTIONS DE MOBILITÉS INTELLIGENTES</div>
         <div class="arrive-soon">ARRIVE BIENTÔT</div>
     </div>
-
     <div class="section slideInRight">
         <h2>Notre Vision</h2>
         <p>Carbonity a vocation de devenir un acteur incontournable dans le conseil vers les mobilités de demain.<br>
