@@ -52,6 +52,11 @@
             background-color: #e0e0e0;
         }
 
+        .section:nth-child(1),
+        .trust-section {
+            background-color: #ffffff;
+        }
+
         .section h2 {
             font-size: 2em;
             margin-bottom: 20px;
@@ -66,15 +71,15 @@
         .contact-form input,
         .contact-form button,
         .contact-form textarea {
-            width: 100%;
-            max-width: 500px;
+            width: calc(50% - 20px);
             padding: 10px;
             margin: 10px auto;
-            display: block;
+            display: inline-block;
             border: 1px solid #ccc;
         }
 
         .contact-form button {
+            width: calc(50% - 20px);
             background-color: #333;
             color: white;
             border: none;
@@ -100,6 +105,17 @@
             margin: 20px;
             height: 50px;
             display: inline-block;
+            animation: spin 5s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         .footer {
@@ -117,6 +133,111 @@
         .footer a:hover {
             color: #003d80;
         }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 20px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        .close:hover {
+            color: #0056b3;
+        }
+
+        .animated {
+            opacity: 0;
+            transition: opacity 0.5s, transform 0.5s;
+        }
+
+        .animated.fadeIn {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .animated.slideInLeft {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .animated.zoomIn {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .section.fadeIn {
+            animation: fadeIn 1s forwards;
+        }
+
+        .section.slideInLeft {
+            animation: slideInLeft 1s forwards;
+        }
+
+        .section.zoomIn {
+            animation: zoomIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            0% {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
     </style>
 </head>
 
@@ -128,7 +249,7 @@
         <div class="arrive-soon">ARRIVE BIENTÔT</div>
     </div>
 
-    <div class="section">
+    <div class="section fadeIn">
         <h2>Notre Vision</h2>
         <p>Carbonity a vocation de devenir un acteur incontournable dans le conseil vers les mobilités de demain. Qu'elles
             tendent vers la décarbonation, qu'elles soient douces, les mobilités seront surtout intelligentes. Nos missions
@@ -137,11 +258,11 @@
             énergétique et RSE.</p>
     </div>
 
-    <div class="section">
+    <div class="section slideInLeft">
         <h2>Contact</h2>
         <p>Être averti au lancement du site</p>
         <form id="emailForm" class="contact-form">
-            <input type="email" id="email" placeholder="Renseigner votre e-mail" required>
+            <input type="email" id="email" placeholder="Renseignez votre e-mail" required>
             <button type="submit">Envoyer</button>
         </form>
         <div id="contactButton" class="contact-link">
@@ -149,14 +270,14 @@
         </div>
     </div>
 
-    <div class="section social-section">
+    <div class="section social-section zoomIn">
         <h2>Suivez-nous</h2>
         <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
         <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
         <a href="#"><i class="fab fa-google-plus fa-2x"></i></a>
     </div>
 
-    <div class="section trust-section">
+    <div class="section trust-section zoomIn">
         <h2>Ils nous font confiance</h2>
         <img src="https://i.ibb.co/Vt3x02r/BPI.png" alt="BPI">
         <img src="https://i.ibb.co/0j9YWcg/EM.png" alt="EM">
@@ -182,7 +303,6 @@
     </div>
 
     <script>
-        // JavaScript pour ouvrir et fermer le pop-up
         document.getElementById('contactButton').onclick = function () {
             document.getElementById('contactModal').style.display = 'flex';
         };
@@ -195,9 +315,15 @@
             }
         };
 
-        // Notification après l'envoi du formulaire
+        document.getElementById('emailForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            alert('Merci pour votre inscription. Vous serez averti au lancement du site.');
+            document.getElementById('emailForm').reset();
+        });
+
         document.getElementById('contactForm').addEventListener('submit', function (event) {
-            event.preventDefault(); // Empêcher l'envoi du formulaire normal
+            event.preventDefault();
             const formData = new FormData(this);
 
             fetch(this.action, {
@@ -225,15 +351,29 @@
             });
         });
 
-        // Gérer la soumission du formulaire d'e-mail
-        document.getElementById('emailForm').addEventListener('submit', function (event) {
-            event.preventDefault();
-            const email = document.getElementById('email').value;
-            console.log('Email envoyé:', email); // Remplacez ceci par votre logique de traitement
-            alert('Merci pour votre inscription. Vous serez averti au lancement du site.');
-            document.getElementById('emailForm').reset();
-        });
+        // Function to animate sections on scroll
+        function animateSections() {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                const sectionPosition = section.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                if (sectionPosition < screenPosition) {
+                    section.classList.add('animated');
+                    if (section.classList.contains('fadeIn')) {
+                        section.classList.add('fadeIn');
+                    } else if (section.classList.contains('slideInLeft')) {
+                        section.classList.add('slideInLeft');
+                    } else if (section.classList.contains('zoomIn')) {
+                        section.classList.add('zoomIn');
+                    }
+                }
+            });
+        }
+
+        window.addEventListener('scroll', animateSections);
+        window.addEventListener('load', animateSections);
     </script>
+
 </body>
 
 </html>
