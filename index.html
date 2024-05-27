@@ -10,6 +10,16 @@
     <!-- Inclure Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap">
     <style>
+
+        .contact-link {
+            cursor: pointer; /* Changer le curseur au survol */
+        }
+
+        .contact-link:hover span {
+            color: #ffcc00; /* Changer la couleur du texte au survol */
+        }
+
+        
         body {
             font-family: 'Nunito', sans-serif;
             margin: 0;
@@ -170,50 +180,36 @@
             border-radius: 8px;
         }
 
-
-        
-
-
-
         .modal-content h2 {
-    margin-bottom: 20px;
-    color: #333;
-}
+            margin-bottom: 20px;
+            color: #333;
+        }
 
-.modal-content input,
-.modal-content textarea {
-    width: calc(100% - 20px); /* Réduire la largeur de 20px pour laisser de l'espace pour la marge */
-    padding: 10px;
-    margin: 10px auto; /* Centrer les champs horizontalement */
-    display: block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box; /* Inclure la bordure et le padding dans la largeur */
-}
-
-.modal-content button {
-    width: 100%;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-}
-
-.modal-content button:hover {
-    background-color: #555;
-}
-
-
-
-
+        .modal-content input,
+        .modal-content textarea {
+            width: calc(100% - 20px); /* Réduire la largeur de 20px pour laisser de l'espace pour la marge */
+            padding: 10px;
+            margin: 10px auto; /* Centrer les champs horizontalement */
+            display: block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Inclure la bordure et le padding dans la largeur */
+        }
         
-
-
-
-
+        .modal-content button {
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        .modal-content button:hover {
+            background-color: #555;
+        }
         
         .close {
             position: absolute;
@@ -342,6 +338,18 @@
     </div>
 
     <script>
+
+        document.querySelector('.contact-link').addEventListener('mouseover', function() {
+            this.querySelector('span').style.color = '#ffcc00';
+        });
+
+        document.querySelector('.contact-link').addEventListener('mouseout', function() {
+            this.querySelector('span').style.color = ''; // Réinitialiser la couleur
+        });
+
+
+
+        
         document.getElementById('contactButton').onclick = function () {
             document.getElementById('contactModal').style.display = 'flex';
         };
