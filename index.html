@@ -25,6 +25,8 @@
             justify-content: center;
             text-align: center;
             padding: 20px;
+            position: relative;
+            z-index: 1;
         }
         .logo-section {
             display: flex;
@@ -34,7 +36,24 @@
         }
         .logo {
             width: 400px;
-            margin-bottom: 20px;
+            animation: bounceIn 2s ease-out 1;
+            object-fit: cover; /* Ajuster pour ne pas cacher le texte */
+        }
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.3);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                transform: scale(1);
+            }
         }
         .tagline {
             font-size: 1.2em;
@@ -45,20 +64,99 @@
             font-weight: bold;
             margin-bottom: 40px;
         }
-        .contact-link {
-            display: inline-flex;
+        .info-section {
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            background-color: #b0b0b0;
+            padding: 20px;
+            text-align: left;
+            margin-bottom: 0;
+            border: none;
+        }
+        .info-box {
+            flex: 1;
+            padding: 10px;
+        }
+        .info-box h3 {
+            margin-top: 0;
+        }
+        .info-box p {
+            margin-bottom: 10px;
+            white-space: pre-line; /* Pour permettre les sauts de ligne */
+        }
+        .info-box form {
+            display: flex;
             align-items: center;
-            text-decoration: none;
-            color: #007BFF;
-            font-size: 18px;
+        }
+        .info-box input[type="email"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            flex: 1;
+        }
+        .info-box button {
+            padding: 10px 20px;
+            border: none;
+            background: #0056b3;
+            color: white;
             cursor: pointer;
+            transition: background 0.3s;
+        }
+        .info-box button:hover {
+            background: #003d80;
+        }
+        .separator {
+            width: 2px;
+            background-color: #ccc;
+            margin: 0 10px;
+        }
+        .social-section {
+            width: 100%;
+            max-width: 800px;
+            background-color: #b0b0b0;
+            padding: 20px;
+            margin-bottom: 0;
+            text-align: center;
+        }
+        .social-section a {
+            margin: 0 10px;
+            color: #333;
             transition: color 0.3s;
         }
-        .contact-link i {
-            margin-right: 8px;
-        }
-        .contact-link:hover {
+        .social-section a:hover {
             color: #0056b3;
+        }
+        .trust-section {
+            width: 100%;
+            max-width: 800px;
+            background-color: #004080;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+        .trust-section h3 {
+            text-align: left;
+            margin: 0 0 10px 0;
+        }
+        .trust-section img {
+            margin: 10px;
+            height: 50px;
+        }
+        .footer {
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+        .footer a {
+            color: #0056b3;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer a:hover {
+            color: #003d80;
         }
         .modal {
             display: none;
@@ -70,17 +168,16 @@
             background: rgba(0, 0, 0, 0.5);
             justify-content: center;
             align-items: center;
-            transition: opacity 0.3s;
-            z-index: 10;
+            z-index: 9999;
         }
         .modal-content {
             background: white;
             padding: 20px;
-            border-radius: 8px;
-            width: 300px;
+            width: 90%;
+            max-width: 400px;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            z-index: 11;
+            position: relative;
         }
         .close {
             position: absolute;
@@ -92,7 +189,7 @@
             transition: color 0.3s;
         }
         .close:hover {
-            color: #007BFF;
+            color: #0056b3;
         }
         form {
             display: flex;
@@ -101,21 +198,35 @@
         input, textarea {
             margin-bottom: 10px;
             padding: 10px;
-            border-radius: 5px;
             border: 1px solid #ccc;
             font-family: 'Nunito', sans-serif;
         }
         button {
             padding: 10px;
             border: none;
-            border-radius: 5px;
-            background: #007BFF;
+            background: #007bff;
             color: white;
             cursor: pointer;
             transition: background 0.3s;
         }
         button:hover {
             background: #0056b3;
+        }
+        .contact-link {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            transition: background 0.3s;
+        }
+        .contact-link:hover {
+            background-color: #0056b3;
+        }
+        .contact-link:hover i {
+            cursor: pointer;
         }
         .background-image {
             background: url('/mnt/data/mon-slide-canva.jpg') no-repeat center center;
@@ -128,98 +239,32 @@
             z-index: -1;
             opacity: 0.2;
         }
-        .section-container {
-            display: flex;
-            width: 100%;
-            padding: 20px 0;
-            background-color: #f5f5f5;
-            justify-content: space-around;
-        }
-        .section {
-            width: 45%;
-            padding: 20px;
-            background-color: #f5f5f5;
-            margin: 10px 0;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .section-title {
-            font-size: 1.4em;
-            font-weight: bold;
-            margin-bottom: 10px;
-            text-align: left;
-        }
-        .section-content {
-            font-size: 1em;
-            text-align: left;
-            line-height: 1.6;
-        }
-        .contact-form {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-        }
-        .contact-form input {
-            flex: 1;
-            margin-right: 10px;
-        }
-        .contact-form button {
-            flex-shrink: 0;
-        }
-        .social-links {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        .social-links a {
-            margin: 0 10px;
-            color: #007BFF;
-            font-size: 24px;
-            transition: color 0.3s;
-        }
-        .social-links a:hover {
-            color: #0056b3;
-        }
-        .trusted-section {
-            background-color: #4a90e2;
-            padding: 20px;
-            text-align: center;
-        }
-        .trusted-section img {
-            max-height: 50px;
-            margin: 0 20px;
-        }
-        .footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #4a90e2;
-            color: #333;
-        }
-        .white-line {
-            height: 1px;
-            background-color: #fff;
-            margin: 20px 0;
-        }
         @media only screen and (max-width: 768px) {
             .container {
                 width: 90%;
+                padding: 10px;
             }
-            .section-container {
+            .tagline {
+                font-size: 1em;
+                margin-bottom: 15px;
+            }
+            .arrive-soon {
+                font-size: 1.2em;
+                margin-bottom: 30px;
+            }
+            .info-section {
                 flex-direction: column;
-                align-items: center;
+                text-align: center;
             }
-            .section {
-                width: 90%;
+            .separator {
+                display: none;
             }
-            .contact-form {
-                flex-direction: column;
-                align-items: stretch;
+            .info-box {
+                margin-bottom: 20px;
             }
-            .contact-form input {
-                margin-right: 0;
-                margin-bottom: 10px;
-            }
-            .section-content {
-                text-align: justify;
+            .social-section a {
+                display: block;
+                margin: 10px 0;
             }
         }
     </style>
@@ -228,46 +273,42 @@
     <div class="background-image"></div>
     <div class="container">
         <div class="logo-section">
-            <img class="logo" src="https://i.ibb.co/nDssBZB/Capture-d-cran-2024-05-27-011750.png" alt="Capture-d-cran-2024-05-27-011750">
+            <img src="https://i.ibb.co/nDssBZB/Capture-d-cran-2024-05-27-011750.png" alt="Logo Carbonity" class="logo">
             <div class="tagline">FOURNISSEUR DE SOLUTIONS DE MOBILITÉS INTELLIGENTES</div>
             <div class="arrive-soon">ARRIVE BIENTÔT</div>
         </div>
 
-        <div class="section-container">
-            <div class="section">
-                <div class="section-title">Notre Vision</div>
-                <div class="section-content">
-                    Carbonity a vocation de devenir un acteur incontournable dans le conseil vers les mobilités de demain.<br>
-                    <br>
-                    Qu'elles tendent vers la décarbonation, qu'elles soient douces, les mobilités seront surtout intelligentes.<br>
-                    <br>
-                    Nos solutions, mobilisant la Data via des technologies comme l'IA, pourront élaborer des Plans de Mobilités et réaliser des audits de flottes de véhicules.
-                </div>
+        <div class="info-section">
+            <div class="info-box">
+                <h3>Notre Vision</h3>
+                <p>Carbonity a vocation de devenir un acteur incontournable dans le conseil vers les mobilités de demain.
+Qu'elles tendent vers la décarbonation, qu'elles soient douces, les mobilités seront surtout intelligentes.
+                Nos solutions, mobilisant la Data via des technologies comme l'IA, pourront élaborer des Plans de Mobilités et
+                réaliser des audits de flottes de véhicules.</p>
             </div>
-            <div class="white-line"></div>
-            <div class="section">
-                <div class="section-title">Contact</div>
-                <div class="section-content">
-                    <div>Être averti au lancement du site</div>
-                    <div class="contact-form">
-                        <input type="email" id="email" name="email" placeholder="Renseigner votre e-mail" required>
-                        <button type="submit">Envoyer</button>
-                    </div>
-                    <div class="contact-link" id="contactButton">
-                        <i class="fas fa-envelope"></i>
-                        <span>Prise de contact</span>
-                    </div>
+            <div class="separator"></div>
+            <div class="info-box">
+                <h3>Contact</h3>
+                <div class="subtitle">être averti au lancement du site</div>
+                <form id="emailForm">
+                    <input type="email" id="email" placeholder="renseigner votre e-mail" required>
+                    <button type="submit">Envoyer</button>
+                </form>
+                <div id="contactButton" class="contact-link">
+                    <i class="fas fa-envelope"></i>&nbsp; Prise de contact
                 </div>
             </div>
         </div>
-        <div class="social-links">
-            <a href="#"><i class="fab fa-x"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-google-plus"></i></a>
+
+        <div class="social-section">
+            <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+            <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
+            <a href="#"><i class="fab fa-google-plus fa-2x"></i></a>
         </div>
-        <div class="trusted-section">
-            <div class="section-title">Ils nous font confiance</div>
-            <img src="https://i.ibb.co/4gNvJjp/BPI.png
+
+        <div class="trust-section">
+            <h3>Ils nous font confiance</h3>
+            <img src="https://i.ibb.co/gzY8R1N/BPI.png" alt="BPI">
             <img src="https://i.ibb.co/DMV0R3S/French-Tech.png" alt="French Tech">
             <img src="https://i.ibb.co/wWzY8bt/EDLV.png" alt="EDLV">
         </div>
