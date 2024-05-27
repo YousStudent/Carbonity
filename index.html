@@ -70,7 +70,7 @@
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            background-color: #b0b0b0;
+            background-color: #f5f5f5;
             padding: 20px;
             text-align: left;
             margin-bottom: 0;
@@ -117,7 +117,7 @@
         .social-section {
             width: 100%;
             max-width: 800px;
-            background-color: #b0b0b0;
+            background-color: #f5f5f5;
             padding: 20px;
             margin-bottom: 0;
             text-align: center;
@@ -136,7 +136,7 @@
             background-color: #ffffff;
             padding: 20px;
             text-align: center;
-            color: white;
+            color: #333;
         }
         .trust-section h3 {
             text-align: left;
@@ -327,6 +327,7 @@
             <span class="close" id="closeButton">&times;</span>
             <h2>Prise de contact</h2>
             <form id="contactForm" action="https://formspree.io/f/xleqkayr" method="POST">
+                <input type="text" id="name" name="name" placeholder
                 <input type="text" id="name" name="name" placeholder="Nom" required>
                 <input type="email" id="email" name="email" placeholder="Email" required>
                 <textarea id="message" name="message" rows="4" placeholder="Message" required></textarea>
@@ -390,3 +391,4 @@
     </script>
 </body>
 </html>
+
