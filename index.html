@@ -37,7 +37,7 @@
         .logo {
             width: 400px;
             animation: bounceIn 2s ease-out 1;
-            object-fit: cover; /* Ajuster pour ne pas cacher le texte */
+            object-fit: cover;
         }
         @keyframes bounceIn {
             0% {
@@ -85,11 +85,12 @@
         }
         .info-box p {
             margin-bottom: 10px;
-            white-space: pre-line; /* Pour permettre les sauts de ligne */
+            white-space: pre-line;
         }
         .info-box form {
             display: flex;
             align-items: center;
+            justify-content: flex-start;
         }
         .info-box input[type="email"] {
             padding: 10px;
@@ -109,7 +110,7 @@
         }
         .separator {
             width: 2px;
-            background-color: #ccc;
+            background-color: #fff;
             margin: 0 10px;
         }
         .social-section {
@@ -282,9 +283,10 @@
             <div class="info-box">
                 <h3>Notre Vision</h3>
                 <p>Carbonity a vocation de devenir un acteur incontournable dans le conseil vers les mobilités de demain.
-                /n/nQu'elles tendent vers la décarbonation, qu'elles soient douces, les mobilités seront surtout intelligentes.
-                /nNos solutions, mobilisant la Data via des technologies comme l'IA, pourront élaborer des Plans de Mobilités et
-                réaliser des audits de flottes de véhicules.</p>
+                    Qu'elles tendent vers la décarbonation, qu'elles soient douces, les mobilités seront surtout intelligentes.
+                    Nos solutions, mobilisant la Data via des technologies comme l'IA, pourront élaborer des Plans de Mobilités et
+                    réaliser des audits de flottes de véhicules.
+                </p>
             </div>
             <div class="separator"></div>
             <div class="info-box">
@@ -301,7 +303,7 @@
         </div>
 
         <div class="social-section">
-            <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+            <a href="#"><i class="fab fa-x-twitter fa-2x"></i></a>
             <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
             <a href="#"><i class="fab fa-google-plus fa-2x"></i></a>
         </div>
