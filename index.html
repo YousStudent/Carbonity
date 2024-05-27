@@ -182,12 +182,13 @@
 
 .modal-content input,
 .modal-content textarea {
-    width: 100%;
+    width: calc(100% - 20px); /* Réduire la largeur de 20px pour laisser de l'espace pour la marge */
     padding: 10px;
-    margin: 10px 0;
+    margin: 10px auto; /* Centrer les champs horizontalement */
     display: block;
     border: 1px solid #ccc;
     border-radius: 4px;
+    box-sizing: border-box; /* Inclure la bordure et le padding dans la largeur */
 }
 
 .modal-content button {
