@@ -15,7 +15,7 @@
             padding: 0;
             background-color: #ffffff;
             color: #333;
-            overflow-x: hidden; /* Pour éviter le défilement horizontal */
+            overflow-x: hidden;
         }
         .container {
             width: 100%;
@@ -37,6 +37,7 @@
         .logo {
             width: 400px;
             animation: bounceIn 2s ease-out 1;
+            object-fit: cover; /* Ajuster pour ne pas cacher le texte */
         }
         @keyframes bounceIn {
             0% {
@@ -69,11 +70,11 @@
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            background-color: #999999;
+            background-color: #b0b0b0;
             padding: 20px;
-            border-radius: 8px;
             text-align: left;
-            margin-bottom: 0; /* Supprimer l'espace entre les sections */
+            margin-bottom: 0;
+            border: none;
         }
         .info-box {
             flex: 1;
@@ -82,8 +83,9 @@
         .info-box h3 {
             margin-top: 0;
         }
-        .info-box p, .info-box .subtitle {
+        .info-box p {
             margin-bottom: 10px;
+            white-space: pre-line; /* Pour permettre les sauts de ligne */
         }
         .info-box form {
             display: flex;
@@ -91,14 +93,12 @@
         }
         .info-box input[type="email"] {
             padding: 10px;
-            border-radius: 5px 0 0 5px;
             border: 1px solid #ccc;
             flex: 1;
         }
         .info-box button {
             padding: 10px 20px;
             border: none;
-            border-radius: 0 5px 5px 0;
             background: #0056b3;
             color: white;
             cursor: pointer;
@@ -115,10 +115,9 @@
         .social-section {
             width: 100%;
             max-width: 800px;
-            background-color: #999999;
+            background-color: #b0b0b0;
             padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 0; /* Supprimer l'espace entre les sections */
+            margin-bottom: 0;
             text-align: center;
         }
         .social-section a {
@@ -132,16 +131,14 @@
         .trust-section {
             width: 100%;
             max-width: 800px;
-            background-color: #003d80;
+            background-color: #004080;
             padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 20px;
             text-align: center;
             color: white;
         }
         .trust-section h3 {
             text-align: left;
-            margin: 0;
+            margin: 0 0 10px 0;
         }
         .trust-section img {
             margin: 10px;
@@ -176,7 +173,6 @@
         .modal-content {
             background: white;
             padding: 20px;
-            border-radius: 8px;
             width: 90%;
             max-width: 400px;
             text-align: center;
@@ -202,14 +198,12 @@
         input, textarea {
             margin-bottom: 10px;
             padding: 10px;
-            border-radius: 5px;
             border: 1px solid #ccc;
             font-family: 'Nunito', sans-serif;
         }
         button {
             padding: 10px;
             border: none;
-            border-radius: 5px;
             background: #007bff;
             color: white;
             cursor: pointer;
@@ -226,7 +220,6 @@
             padding: 10px;
             background-color: #007bff;
             color: white;
-            border-radius: 5px;
             transition: background 0.3s;
         }
         .contact-link:hover {
@@ -289,7 +282,7 @@
             <div class="info-box">
                 <h3>Notre Vision</h3>
                 <p>Carbonity a vocation de devenir un acteur incontournable dans le conseil vers les mobilités de demain.
-                Qu'elles tendent vers la décarbonation, qu'elles soient douces, les mobilités seront surtout intelligentes.
+Qu'elles tendent vers la décarbonation, qu'elles soient douces, les mobilités seront surtout intelligentes.
                 Nos solutions, mobilisant la Data via des technologies comme l'IA, pourront élaborer des Plans de Mobilités et
                 réaliser des audits de flottes de véhicules.</p>
             </div>
