@@ -37,7 +37,7 @@
         .logo {
             width: 150px;
             height: auto;
-            animation: bounceIn 2s ease-out 1 infinite;
+            animation: bounceIn 2s ease-out 1;
         }
         @keyframes bounceIn {
             0% {
@@ -75,6 +75,17 @@
             text-align: left;
             margin-bottom: 0;
             border: none;
+            animation: slideRight 1s ease-in-out;
+        }
+        @keyframes slideRight {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
         }
         .info-box {
             flex: 1;
@@ -93,23 +104,23 @@
             justify-content: flex-start;
         }
         .info-box input[type="email"] {
-            padding: 10px;
+            padding: 5px;
             border: 1px solid #ccc;
             flex: 1;
-            text-align: left;
-            width: 50%; /* Modifier cette valeur pour ajuster la taille */
+            text-align: left; /* Ajout pour aligner le texte à gauche */
+            max-width: 200px;
         }
         .info-box button {
-            padding: 10px 20px;
+            padding: 5px 10px;
             border: none;
-            background: #007bff;
+            background: #0056b3;
             color: white;
             cursor: pointer;
             transition: background 0.3s;
-            width: 15%; /* Modifier cette valeur pour ajuster la taille */
+            font-size: 0.9em;
         }
         .info-box button:hover {
-            background: #0056b3;
+            background: #003d80;
         }
         .separator {
             width: 2px;
@@ -123,6 +134,17 @@
             padding: 20px;
             margin-bottom: 0;
             text-align: center;
+            animation: slideLeft 1s ease-in-out;
+        }
+        @keyframes slideLeft {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
         }
         .social-section a {
             margin: 0 10px;
@@ -139,6 +161,7 @@
             padding: 20px;
             text-align: center;
             color: white;
+            animation: slideRight 1s ease-in-out;
         }
         .trust-section h3 {
             text-align: left;
@@ -153,6 +176,7 @@
             text-align: center;
             padding: 20px;
             font-size: 0.9em;
+            animation: slideLeft 1s ease-in-out;
         }
         .footer a {
             color: #0056b3;
@@ -175,14 +199,13 @@
             z-index: 9999;
         }
         .modal-content {
-            background: #fff;
+            background: white;
             padding: 20px;
             width: 90%;
             max-width: 400px;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             position: relative;
-            border-radius: 8px;
         }
         .close {
             position: absolute;
@@ -193,7 +216,7 @@
             color: #333;
             transition: color 0.3s;
         }
-        .close:hover, .modal-content button:hover {
+        .close:hover {
             color: #0056b3;
         }
         form {
@@ -207,12 +230,14 @@
             font-family: 'Nunito', sans-serif;
         }
         button {
-            padding: 10px;
+            padding: 10
+px;
             border: none;
             background: #007bff;
             color: white;
             cursor: pointer;
             transition: background 0.3s;
+            font-size: 0.9em;
         }
         button:hover {
             background: #0056b3;
@@ -244,6 +269,9 @@
             z-index: -1;
             opacity: 0.2;
         }
+        .highlight-section {
+            background-color: yellow;
+        }
         @media only screen and (max-width: 768px) {
             .container {
                 width: 90%;
@@ -272,38 +300,6 @@
                 margin: 10px 0;
             }
         }
-
-        /* Animation des sections */
-        .info-section:nth-child(odd) {
-            animation: slideLeft 1s ease-in-out infinite alternate;
-        }
-        .info-section:nth-child(even) {
-            animation: slideRight 1s ease-in-out infinite alternate;
-        }
-        @keyframes slideLeft {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50px);
-            }
-        }
-        @keyframes slideRight {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(50px);
-            }
-        }
-
-        /* Surbrillance des sections */
-        .info-section:nth-child(2):hover,
-        .info-section:nth-child(3):hover,
-        .info-section:nth-child(4):hover {
-            background-color: yellow;
-            color: #333; /* Assure que le texte reste visible */
-        }
     </style>
 </head>
 <body>
@@ -315,7 +311,7 @@
             <div class="arrive-soon">ARRIVE BIENTÔT</div>
         </div>
 
-        <div class="info-section">
+        <div class="info-section highlight-section">
             <div class="info-box">
                 <h3>Notre Vision</h3>
                 <p align="justify">Carbonity a vocation de devenir un acteur incontournable dans le conseil vers les mobilités de demain.
@@ -344,7 +340,7 @@
             <a href="#"><i class="fab fa-google-plus fa-2x"></i></a>
         </div>
 
-        <div class="trust-section">
+        <div class="trust-section highlight-section">
             <h3>Ils nous font confiance</h3>
             <img src="https://i.ibb.co/Vt3x02r/BPI.png" alt="BPI" border="0">
             <img src="https://i.ibb.co/0j9YWcg/EM.png" alt="EM" border="0">
@@ -399,11 +395,37 @@
                 if (response.ok) {
                     alert('Votre message a été envoyé avec succès.');
                     document.getElementById('contactForm').reset();
-                    document.getElementById('contactModal').
-        }).catch(error => {
-                    alert('Une erreur s\'est produite lors de l\'envoi du message. Veuillez réessayer plus tard.');
-                    console.error('Erreur lors de l\'envoi du formulaire :', error);
-                });
+                    document.getElementById('contactModal').style.display = 'none';
+                } else {
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            alert(data["errors"].map
+(err => err.message).join('\n'));
+                        } else {
+                            alert('Il y a eu une erreur lors de l\'envoi du message. Veuillez réessayer.');
+                        }
+                    });
+                }
+            }).catch(error => {
+                console.error('Error:', error);
+                alert('Il y a eu une erreur lors de l\'envoi du message. Veuillez réessayer.');
+            });
+        });
+
+        // Animation continue du logo
+        const logo = document.querySelector('.logo');
+        logo.addEventListener('animationiteration', () => {
+            logo.classList.remove('bounceIn');
+            void logo.offsetWidth; // Réinitialiser l'animation
+            logo.classList.add('bounceIn');
+        });
+
+        // Ajouter la classe highlight-section aux sections 2, 3 et 4
+        const sections = document.querySelectorAll('.info-section, .trust-section, .social-section, .footer');
+        sections.forEach((section, index) => {
+            if (index > 0 && index < 5) {
+                section.classList.add('highlight-section');
+            }
         });
     </script>
 </body>
