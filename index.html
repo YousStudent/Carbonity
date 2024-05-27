@@ -50,6 +50,11 @@
         .section {
             padding: 60px 20px;
             text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        .section:hover {
+            background-color: #f0f0f0;
         }
 
         .section:nth-child(even) {
@@ -72,10 +77,8 @@
             margin: 0 auto 20px;
         }
 
-        .contact-form input,
-        .contact-form button,
-        .contact-form textarea {
-            width: calc(40% - 10px);
+        .contact-form input {
+            width: 70%;
             padding: 10px;
             margin: 10px auto;
             display: inline-block;
@@ -83,7 +86,8 @@
         }
 
         .contact-form button {
-            width: calc(40% - 10px);
+            width: 25%;
+            padding: 10px;
             background-color: #333;
             color: white;
             border: none;
@@ -109,20 +113,20 @@
             margin: 20px;
             height: 50px;
             display: inline-block;
-            animation: pulse 3s infinite;
+            animation: float 3s ease-in-out infinite;
         }
 
-        @keyframes pulse {
+        @keyframes float {
             0% {
-                transform: scale(1);
+                transform: translateY(0);
             }
 
             50% {
-                transform: scale(1.05);
+                transform: translateY(-10px);
             }
 
             100% {
-                transform: scale(1);
+                transform: translateY(0);
             }
         }
 
@@ -182,7 +186,7 @@
 
         .animated {
             opacity: 0;
-            transition: opacity 0.5s, transform 0.5s;
+            transition: opacity 1s, transform 1s;
         }
 
         .animated.slideInRight {
@@ -196,11 +200,11 @@
         }
 
         .section.slideInLeft {
-            animation: slideInLeft 1s forwards;
+            animation: slideInLeft 1.5s forwards;
         }
 
         .section.slideInRight {
-            animation: slideInRight 1s forwards;
+            animation: slideInRight 1.5s forwards;
         }
 
         @keyframes slideInLeft {
@@ -224,20 +228,6 @@
             100% {
                 opacity: 1;
                 transform: translateX(0);
-            }
-        }
-
-        @keyframes float {
-            0% {
-                transform: translatey(0px);
-            }
-
-            50% {
-                transform: translatey(-10px);
-            }
-
-            100% {
-                transform: translatey(0px);
             }
         }
     </style>
@@ -282,15 +272,13 @@
     <div class="section trust-section slideInLeft">
         <h2>Ils nous font confiance</h2>
         <img src="https://i.ibb.co/Vt3x02r/BPI.png" alt="BPI">
-        <img src="https://i.ibb.co/0j9YWcg/EM.png" alt="EM">
-        <img src="https://i.ibb.co/Nmmbt6J/FTT.png" alt="FTT">
-        <img src="https://i.ibb.co/NmxMmFD/REN.png" alt="REN">
+        <img src="https://i.ibb.co/0c0R4r5/French-Tech.jpg" alt="French Tech">
+        <img src="https://i.ibb.co/Nt7rNwN/La-Poste.png" alt="La Poste">
+        <img src="https://i.ibb.co/4fFfgyh/Credit-Agricole.png" alt="Credit Agricole">
     </div>
 
     <div class="footer">
         &copy; 2024 Carbonity. Tous droits réservés.
-        <br>
-        <a href="#" id="contactButtonFooter">Prise de contact</a>
     </div>
 
     <div id="contactModal" class="modal">
