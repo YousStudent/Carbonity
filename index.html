@@ -10,7 +10,13 @@
     <!-- Inclure Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap">
     <style>
-        /* Styles communs */
+        .contact-link {
+            cursor: pointer;
+        }
+
+        .contact-link:hover span {
+            color: #ffcc00;
+        }
 
         body {
             font-family: 'Nunito', sans-serif;
@@ -21,6 +27,7 @@
             overflow-x: hidden;
         }
 
+        /* Section 1: Header */
         .header {
             background: #fff;
             color: white;
@@ -49,6 +56,7 @@
             color: #333;
         }
 
+        /* Section 2: Notre Vision */
         .section {
             padding: 60px 20px;
             text-align: center;
@@ -79,16 +87,7 @@
             margin: 0 auto 20px;
         }
 
-        .contact-link {
-            cursor: pointer;
-        }
-
-        .contact-link:hover span {
-            color: #ffcc00;
-        }
-
-        /* Styles spécifiques à chaque section */
-
+        /* Section 3: Contact */
         .contact-form-wrapper {
             position: relative;
             display: flex;
@@ -177,7 +176,7 @@
         .contact-border {
             position: absolute;
             top: 50%;
-            width: calc(100% - 550px); /* Modifier cette valeur */
+            width: calc(100% - 550px);
             height: 2px;
             background-color: #333;
             z-index: 0;
@@ -197,6 +196,7 @@
             }
         }
 
+        /* Section 4: Suivez-nous */
         .social-section a {
             margin: 0 10px;
             color: #333;
@@ -207,6 +207,7 @@
             color: #0056b3;
         }
 
+        /* Section 5: Ils nous font confiance */
         .trust-section img {
             margin: 20px;
             height: 50px;
@@ -228,6 +229,7 @@
             }
         }
 
+        /* Section 6: Copyright */
         .footer {
             background: #333;
             color: white;
@@ -244,6 +246,7 @@
             color: #003d80;
         }
 
+        /* Modal */
         .modal {
             display: none;
             position: fixed;
@@ -271,17 +274,19 @@
         .modal-content h2 {
             margin-bottom: 20px;
             color: #333;
-               .modal-content input,
+        }
+
+        .modal-content input,
         .modal-content textarea {
-            width: calc(100% - 20px); /* Réduire la largeur de 20px pour laisser de l'espace pour la marge */
+            width: calc(100% - 20px);
             padding: 10px;
-            margin: 10px auto; /* Centrer les champs horizontalement */
+            margin: 10px auto;
             display: block;
             border: 1px solid #ccc;
             border-radius: 4px;
-            box-sizing: border-box; /* Inclure la bordure et le padding dans la largeur */
+            box-sizing: border-box;
         }
-        
+
         .modal-content button {
             width: 100%;
             padding: 10px;
@@ -292,11 +297,11 @@
             border-radius: 4px;
             transition: background-color 0.3s;
         }
-        
+
         .modal-content button:hover {
             background-color: #555;
         }
-        
+
         .close {
             position: absolute;
             top: 10px;
@@ -311,6 +316,7 @@
             color: #0056b3;
         }
 
+        /* Animation */
         .animated {
             opacity: 0;
             transition: opacity 1s, transform 1s;
@@ -357,90 +363,96 @@
                 transform: translateX(0);
             }
         }
+
+        /* Surbrillance */
+        .highlight:hover {
+            background-color: yellow !important;
+        }
     </style>
 </head>
 
 <body>
+    <!-- Section 1: Header -->
+    <header class="header">
+        <img src="carbonity_logo.png" alt="Logo Carbonity">
+        <div class="tagline">Fournisseur de solutions de mobilités intelligentes</div>
+        <div class="arrive-soon">Arrive bientôt</div>
+    </header>
 
-    <div class="header">
-        <img src="https://i.ibb.co/djgDfps/CARBONITY.png" alt="CARBONITY" class="logo">
-        <div class="tagline">FOURNISSEUR DE SOLUTIONS DE MOBILITÉS INTELLIGENTES</div>
-        <div class="arrive-soon">ARRIVE BIENTÔT</div>
-    </div>
-
-    <div class="section slideInRight">
+    <!-- Section 2: Notre Vision -->
+    <section class="section highlight">
         <h2>Notre Vision</h2>
-        <p>Carbonity a vocation de devenir un acteur incontournable dans le conseil vers les mobilités de demain.<br>
-        <br>Qu'elles tendent vers la décarbonation, qu'elles soient douces, les mobilités seront surtout intelligentes.<br>
-        <br>Nos missions, d’audit, de conseil et de gestion de projet, envisagent le sourcing des meilleures solutions en matière de mobilité et d’infrastructures de recharge.<br>
-        <br>En somme, un accompagnement complet au service de votre performance énergétique et votre politique RSE.</p>
-    </div>
+        <p>
+            Carbonity s'engage à devenir un acteur majeur dans le conseil en mobilité durable et intelligente. Notre
+            mission est de fournir des solutions innovantes qui réduisent l'empreinte carbone tout en optimisant les
+            déplacements urbains.
+        </p>
+    </section>
 
-    <div class="section slideInLeft">
-        <h2>Contact</h2>
+    <!-- Section 3: Contact -->
+    <section class="section highlight">
         <div class="contact-title-wrapper">
-            <span class="contact-title">Être averti au lancement du site</span>
+            <div class="contact-title">
+                <h2>Contactez-nous</h2>
+            </div>
             <div class="contact-border"></div>
         </div>
         <div class="contact-form-wrapper">
             <form id="emailForm" class="contact-form">
-                <input type="email" id="email" placeholder="Renseignez votre e-mail" required>
-                <button type="submit">Envoyer</button>
+                <input type="email" id="email" placeholder="Votre adresse email" required>
+                <button type="submit">S'inscrire</button>
             </form>
         </div>
-        <div id="contactButton" class="contact-link">
-            <i class="fas fa-envelope"></i>&nbsp; <span>Prise de contact</span>
-        </div>
-    </div>
+        <button class="contact-link" id="contactButton">Nous contacter directement</button>
+    </section>
 
-    <div class="section social-section slideInRight">
+    <!-- Section 4: Suivez-nous -->
+    <section class="section highlight social-section">
         <h2>Suivez-nous</h2>
-        <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
-        <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
-        <a href="#"><i class="fab fa-google-plus fa-2x"></i></a>
-    </div>
+        <a href="https://www.facebook.com/carbonity" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.twitter.com/carbonity" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/company/carbonity" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </section>
 
-    <div class="section trust-section slideInLeft">
+    <!-- Section 5: Ils nous font confiance -->
+    <section class="section trust-section">
         <h2>Ils nous font confiance</h2>
-        <img src="https://i.ibb.co/Vt3x02r/BPI.png" alt="BPI" border="0">
-        <img src="https://i.ibb.co/0j9YWcg/EM.png" alt="EM" border="0">
-        <img src="https://i.ibb.co/Nmmbt6J/FTT.png" alt="FTT" border="0">            
-        <img src="https://i.ibb.co/NmxMmFD/REN.png" alt="REN" border="0">
-        <img src="https://i.ibb.co/ZVnZCtG/EDLV.png" alt="EDLV" border="0">
-    </div>
+        <div>
+            <img src="partner1_logo.png" alt="Partner 1">
+            <img src="partner2_logo.png" alt="Partner 2">
+            <img src="partner3_logo.png" alt="Partner 3">
+            <img src="partner4_logo.png" alt="Partner 4">
+        </div>
+    </section>
 
-    <div class="footer">
-        &copy; 2024 Carbonity. Tous droits réservés.
-    </div>
+    <!-- Section 6: Copyright -->
+    <footer class="footer">
+        <p>&copy; 2024 Carbonity. Tous droits réservés. <a href="mentions_legales.html">Mentions légales</a>.</p>
+    </footer>
 
+    <!-- Modal -->
     <div id="contactModal" class="modal">
         <div class="modal-content">
-            <span class="close" id="closeButton">&times;</span>
-            <h2>Prise de contact</h2>
-            <form id="contactForm" action="https://formspree.io/f/xleqkayr" method="POST">
-                <input type="text" id="name" name="name" placeholder="Nom" required>
-                <input type="email" id="email" name="email" placeholder="Email" required>
-                <textarea id="message" name="message" rows="4" placeholder="Message" required></textarea>
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Contactez-nous</h2>
+            <form>
+                <input type="text" placeholder="Votre nom" required>
+                <input type="email" placeholder="Votre email" required>
+                <textarea placeholder="Votre message" required></textarea>
                 <button type="submit">Envoyer</button>
             </form>
         </div>
     </div>
 
     <script>
-        document.querySelector('.contact-link').addEventListener('mouseover', function() {
-            this.querySelector('span').style.color = '#ffcc00';
-        });
-
-        document.querySelector('.contact-link').addEventListener('mouseout', function() {
-            this.querySelector('span').style.color = ''; // Réinitialiser la couleur
-        });
-
         document.getElementById('contactButton').onclick = function () {
             document.getElementById('contactModal').style.display = 'flex';
         };
-        document.getElementById('closeButton').onclick = function () {
+
+        document.getElementById('closeModal').onclick = function () {
             document.getElementById('contactModal').style.display = 'none';
         };
+
         window.onclick = function (event) {
             if (event.target == document.getElementById('contactModal')) {
                 document.getElementById('contactModal').style.display = 'none';
@@ -466,5 +478,3 @@
 </body>
 
 </html>
-
-
