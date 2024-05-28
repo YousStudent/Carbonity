@@ -100,7 +100,7 @@
 }
 
 .contact-form {
-    position: relative; /* Ajoutez cette ligne */
+    position: relative; 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -111,19 +111,9 @@
     box-sizing: border-box;
 }
 
-.contact-title-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    margin-bottom: 10px;
-}
-
 .contact-title {
     background-color: #f5f5f5;
     padding: 0 10px;
-    position: relative; /* Ajoutez cette ligne */
-    z-index: 1;
 }
 
 .contact-frame {
@@ -131,13 +121,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 60%;
-    margin: 0 auto;
-    border-left: 2px solid #333;
-    border-right: 2px solid #333;
-    border-bottom: 2px solid #333;
+    width: 100%;
+    border: 2px solid #333;
     box-sizing: border-box;
     padding: 10px;
+    margin-top: 10px; /* Nouvelle ligne */
 }
 
 .contact-frame::before,
@@ -147,37 +135,17 @@
     top: 0;
     height: 2px;
     background-color: #333;
-    z-index: 0;
+    width: 50%; /* Nouvelle ligne */
 }
 
 .contact-frame::before {
     left: 0;
-    right: 50%;
 }
 
 .contact-frame::after {
-    left: 50%;
     right: 0;
 }
 
-.contact-title::before,
-.contact-title::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 20px; /* Ajustez cette valeur selon vos besoins */
-    background-color: transparent; /* Changez la couleur de fond au besoin */
-    z-index: -1;
-}
-
-.contact-title::before {
-    left: 0;
-}
-
-.contact-title::after {
-    right: 0;
-}
 
 
 @media (max-width: 768px) {
