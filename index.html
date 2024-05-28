@@ -47,6 +47,28 @@
     height: auto;
     display: block;
     margin: 0 auto;
+    animation: float 3s ease-body {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+    overflow-x: hidden;
+}
+
+.header {
+    background: #fff;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+}
+
+.header img {
+    width: 150px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
     animation: float 3s ease-in-out infinite;
 }
 
@@ -97,6 +119,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
 }
 
 .contact-form {
@@ -106,7 +129,7 @@
     align-items: center;
     border: 2px solid #333;
     border-top: none;
-    padding: 20px;
+    padding: 10px;
     width: 60%;
     box-sizing: border-box;
 }
@@ -160,7 +183,6 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    margin-bottom: -10px; /* Aligning the title closer to the form */
 }
 
 .contact-title {
@@ -174,12 +196,32 @@
 .contact-border {
     position: absolute;
     top: 50%;
+    width: 60%;
+    height: 2px;
+    background-color: transparent;
+    border-left: 2px solid #333;
+    border-right: 2px solid #333;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-border::before,
+.contact-border::after {
+    content: '';
     width: 100%;
     height: 2px;
     background-color: #333;
-    z-index: 0;
-    left: -10px; /* Adjust position to extend beyond title */
-    right: -10px; /* Adjust position to extend beyond title */
+    position: absolute;
+    top: 0;
+}
+
+.contact-border::before {
+    left: -100%;
+}
+
+.contact-border::after {
+    right: -100%;
 }
 
 .section:hover .contact-title {
@@ -331,6 +373,7 @@
     }
 }
 
+
     </style>
 </head>
 
@@ -372,6 +415,7 @@
         <i class="fas fa-envelope"></i>&nbsp; <span>Prise de contact</span>
     </div>
 </div>
+
 
 
 
