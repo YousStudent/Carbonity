@@ -93,7 +93,6 @@
 }
 
 .contact-form-wrapper {
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -101,7 +100,9 @@
 }
 
 .contact-form {
+    position: relative; /* Ajoutez cette ligne */
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     border: 2px solid #333;
@@ -110,61 +111,18 @@
     box-sizing: border-box;
 }
 
-.contact-form input {
-    width: 70%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    text-align: center;
-}
-
-.contact-form button {
-    width: 30%;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    box-sizing: border-box;
-    text-align: center;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.contact-form button:hover {
-    background-color: #555;
-}
-
-.contact-link {
-    margin-top: 20px;
-    padding: 15px;
-    background-color: #333;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 1.2em;
-    text-align: center;
-    transition: background-color 0.3s;
-    display: inline-block;
-}
-
-.contact-link:hover {
-    background-color: #555;
-}
-
 .contact-title-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    margin-bottom: 10px; /* Adjust to position text correctly */
+    margin-bottom: 10px;
 }
 
 .contact-title {
-    background-color: #f5f5f5; /* Match the background color to blend in */
+    background-color: #f5f5f5;
     padding: 0 10px;
+    position: relative; /* Ajoutez cette ligne */
     z-index: 1;
 }
 
@@ -194,13 +152,33 @@
 
 .contact-frame::before {
     left: 0;
-    right: 50%; /* Adjust based on your padding and width */
+    right: 50%;
 }
 
 .contact-frame::after {
-    left: 50%; /* Adjust based on your padding and width */
+    left: 50%;
     right: 0;
 }
+
+.contact-title::before,
+.contact-title::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 20px; /* Ajustez cette valeur selon vos besoins */
+    background-color: transparent; /* Changez la couleur de fond au besoin */
+    z-index: -1;
+}
+
+.contact-title::before {
+    left: 0;
+}
+
+.contact-title::after {
+    right: 0;
+}
+
 
 @media (max-width: 768px) {
     .contact-form {
