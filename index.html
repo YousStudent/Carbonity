@@ -87,6 +87,12 @@
             margin: 0 auto 20px;
         }
 
+
+
+
+
+        
+
     .contact-form-wrapper {
     position: relative;
     display: flex;
@@ -166,30 +172,8 @@
     z-index: 1;
     padding: 0 10px;
     transition: background-color 0.3s;
-    margin-top: -15px; /* Réduire la marge pour compenser l'ajout des bordures */
 }
 
-.contact-title::before,
-.contact-title::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    height: 2px;
-    background-color: #333;
-    width: calc(50% - 60px); /* Largeur des bordures (50% - la moitié de la largeur du texte) */
-    z-index: -1;
-}
-
-.contact-title::before {
-    left: 0;
-}
-
-.contact-title::after {
-    right: 0;
-}
-
-        
-        
 
 .section:hover .contact-title {
     background-color: #ffffcc; /* Ajustez cette couleur pour correspondre à votre jaune clair */
@@ -198,10 +182,7 @@
 .contact-border {
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90vw; /* Utilisation de 90% de la largeur de la vue */
-    max-width: 850px; /* Largeur maximale du cadre */
+    width: calc(100% - 550px); /* Modifier cette valeur */
     height: 2px;
     background-color: #333;
     z-index: 0;
@@ -407,6 +388,10 @@
         <br>En somme, un accompagnement complet au service de votre performance énergétique et votre politique RSE.</p>
     </div>
 
+
+
+    
+    
     
     
     <div class="section slideInLeft">
@@ -425,6 +410,16 @@
         <i class="fas fa-envelope"></i>&nbsp; <span>Prise de contact</span>
     </div>
 </div>
+
+
+
+
+
+
+
+    
+
+    
 
     <div class="section social-section slideInRight">
         <h2>Suivez-nous</h2>
