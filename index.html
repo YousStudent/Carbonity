@@ -87,25 +87,32 @@
             margin: 0 auto 20px;
         }
 
-        .contact-form {
+
+
+
+
+        
+
+       .contact-form {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
+    margin-top: 10px; /* Reduced space between text and form */
 }
 
 .contact-form input {
-    width: 80%;
+    width: 60%;
     padding: 10px;
-    margin: 10px 0;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
     text-align: center;
+    margin-right: 10px; /* To create space between input and button */
 }
 
 .contact-form button {
-    width: 80%;
+    width: 20%;
     padding: 10px;
     background-color: #333;
     color: white;
@@ -114,6 +121,9 @@
     transition: background-color 0.3s;
     box-sizing: border-box;
     text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .contact-form button:hover {
@@ -140,6 +150,13 @@
     display: inline-block;
 }
 
+.divider {
+    width: 80%;
+    height: 2px;
+    background-color: #ccc;
+    margin: 10px auto;
+}
+
 @media (min-width: 768px) {
     .contact-form {
         flex-direction: row;
@@ -164,6 +181,9 @@
     }
 }
 
+
+
+        
 
 
 
@@ -349,17 +369,33 @@
         <br>En somme, un accompagnement complet au service de votre performance énergétique et votre politique RSE.</p>
     </div>
 
+
+
+    
+    
+    
+    
     <div class="section slideInLeft">
-        <h2>Contact</h2>
-        <p>Être averti au lancement du site</p>
-        <form id="emailForm" class="contact-form">
-            <input type="email" id="email" placeholder="Renseignez votre e-mail" required>
-            <button type="submit">Envoyer</button>
-        </form>
-        <div id="contactButton" class="contact-link">
-            <i class="fas fa-envelope"></i>&nbsp; <span>Prise de contact</span>
-        </div>
+    <h2>Contact</h2>
+    <p>Être averti au lancement du site</p>
+    <div class="divider"></div>
+    <form id="emailForm" class="contact-form">
+        <input type="email" id="email" placeholder="Renseignez votre e-mail" required>
+        <button type="submit">Envoyer</button>
+    </form>
+    <div id="contactButton" class="contact-link">
+        <i class="fas fa-envelope"></i>&nbsp; <span>Prise de contact</span>
     </div>
+</div>
+
+
+
+
+
+
+    
+
+    
 
     <div class="section social-section slideInRight">
         <h2>Suivez-nous</h2>
