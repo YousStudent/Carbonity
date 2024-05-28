@@ -166,8 +166,30 @@
     z-index: 1;
     padding: 0 10px;
     transition: background-color 0.3s;
+    margin-top: -15px; /* Réduire la marge pour compenser l'ajout des bordures */
 }
 
+.contact-title::before,
+.contact-title::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 2px;
+    background-color: #333;
+    width: calc(50% - 60px); /* Largeur des bordures (50% - la moitié de la largeur du texte) */
+    z-index: -1;
+}
+
+.contact-title::before {
+    left: 0;
+}
+
+.contact-title::after {
+    right: 0;
+}
+
+        
+        
 
 .section:hover .contact-title {
     background-color: #ffffcc; /* Ajustez cette couleur pour correspondre à votre jaune clair */
