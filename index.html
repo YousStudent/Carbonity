@@ -93,6 +93,7 @@
 }
 
 .contact-form-wrapper {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -100,9 +101,7 @@
 }
 
 .contact-form {
-    position: relative; 
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     border: 2px solid #333;
@@ -111,42 +110,88 @@
     box-sizing: border-box;
 }
 
-.contact-title {
-    background-color: #f5f5f5;
-    padding: 0 10px;
+.contact-form input {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    text-align: center;
 }
 
-.contact-frame {
-    position: relative;
+.contact-form button {
+    width: 30%;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-sizing: border-box;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-form button:hover {
+    background-color: #555;
+}
+
+.contact-link {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    text-align: center;
+    transition: background-color 0.3s;
+    display: inline-block;
+}
+
+.contact-link:hover {
+    background-color: #555;
+}
+
+.contact-title-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    border: 2px solid #333;
-    box-sizing: border-box;
-    padding: 10px;
-    margin-top: 10px; /* Nouvelle ligne */
+    position: relative;
+    margin-bottom: -10px; /* Adjust to position text correctly */
 }
 
-.contact-frame::before,
-.contact-frame::after {
-    content: '';
+.contact-title {
+    background-color: transparent; /* Change to transparent to match section */
+    z-index: 1;
+    padding: 0 10px;
+    margin-bottom: -10px; /* Adjust to position text correctly */
+}
+
+.contact-border {
     position: absolute;
-    top: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
     height: 2px;
     background-color: #333;
-    width: 50%; /* Nouvelle ligne */
+    z-index: 0;
 }
 
-.contact-frame::before {
-    left: 0;
+.contact-frame {
+    border: 2px solid #333;
+    position: relative;
+    width: 60%;
+    height: auto;
+    margin: 20px auto 0;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
-.contact-frame::after {
-    right: 0;
-}
-
-
 
 @media (max-width: 768px) {
     .contact-form {
@@ -326,7 +371,7 @@
     
     
     
-    <div class="section slideInLeft">
+   <div class="section slideInLeft">
     <h2>Contact</h2>
     <div class="contact-title-wrapper">
         <span class="contact-title">Être averti au lancement du site</span>
@@ -341,6 +386,7 @@
         <i class="fas fa-envelope"></i>&nbsp; <span>Prise de contact</span>
     </div>
 </div>
+
 
 
 
