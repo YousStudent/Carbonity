@@ -97,12 +97,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .contact-form {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
     border: 2px solid #333;
@@ -168,25 +167,49 @@
     background-color: transparent; /* Change to transparent to match section */
     z-index: 1;
     padding: 0 10px;
-    transition: background-color 0.3s;
-    margin-bottom: -20px; /* Adjust to position text correctly */
-    margin-top: 20px; /* Adjust to align with the top line of the border */
+    margin-bottom: -10px; /* Adjust to position text correctly */
 }
 
 .contact-border {
     position: absolute;
-    top: 0;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
-    width: calc(60% - 20px); /* Adjust width based on padding of contact-title */
+    transform: translate(-50%, -50%);
+    width: calc(100% - 40px); /* Adjust width based on padding of contact-title */
     height: 2px;
     background-color: #333;
     z-index: 0;
-    border-left: 2px solid #333; /* Closing the left side */
-    border-right: 2px solid #333; /* Closing the right side */
 }
 
-.section:hover .contact-title {
+.contact-frame {
+    border: 2px solid #333;
+    border-top: none;
+    position: relative;
+    width: 60%;
+    height: auto;
+    margin: 20px auto 0;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-frame:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-top: 2px solid #333;
+    border-left: 2px solid #333;
+    border-right: 2px solid #333;
+    width: calc(100% - 20px);
+    height: 2px;
+    margin: 0 auto;
+}
+
+.contact-frame:hover .contact-title {
     background-color: #ffffcc; /* Ensure the title matches the section highlight */
 }
 
@@ -337,6 +360,7 @@
 
 
 
+
         
 
 
@@ -372,15 +396,18 @@
         <div class="contact-border"></div>
     </div>
     <div class="contact-form-wrapper">
-        <form id="emailForm" class="contact-form">
-            <input type="email" id="email" placeholder="Renseignez votre e-mail" required>
-            <button type="submit">Envoyer</button>
-        </form>
+        <div class="contact-frame">
+            <form id="emailForm" class="contact-form">
+                <input type="email" id="email" placeholder="Renseignez votre e-mail" required>
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
     </div>
     <div id="contactButton" class="contact-link">
         <i class="fas fa-envelope"></i>&nbsp; <span>Prise de contact</span>
     </div>
 </div>
+
 
 
 
