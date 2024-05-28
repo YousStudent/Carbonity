@@ -159,38 +159,40 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    margin-bottom: -10px; /* Adjust to position text correctly */
+    margin-bottom: 10px; /* Adjust to position text correctly */
 }
 
 .contact-title {
-    background-color: transparent; /* Change to transparent to match section */
-    z-index: 1;
+    background-color: #f5f5f5; /* Match the background color to blend in */
     padding: 0 10px;
-    margin-bottom: -10px; /* Adjust to position text correctly */
-}
-
-.contact-border {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 2px;
-    background-color: #333;
-    z-index: 0;
+    z-index: 1;
 }
 
 .contact-frame {
-    border: 2px solid #333;
     position: relative;
-    width: 60%;
-    height: auto;
-    margin: 20px auto 0;
-    padding: 10px;
-    box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 60%;
+    margin: 0 auto;
+    border-left: 2px solid #333;
+    border-right: 2px solid #333;
+    border-bottom: 2px solid #333;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.contact-frame::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #333;
+    width: calc(100% - 60px); /* Adjust based on your padding and width */
+    margin: 0 auto;
+    z-index: 0;
 }
 
 @media (max-width: 768px) {
