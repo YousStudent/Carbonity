@@ -87,27 +87,46 @@
             margin: 0 auto 20px;
         }
 
+        .contact-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        }
+    
         .contact-form input {
-            width: 40%;
+            width: 80%; /* Utilisation d'une largeur relative */
             padding: 10px;
             margin: 10px auto;
             display: inline-block;
             border: 1px solid #ccc;
+            box-sizing: border-box;
         }
-
+    
         .contact-form button {
-            width: 10%;
+            width: 50%; /* Utilisation d'une largeur relative */
             padding: 10px;
             background-color: #333;
             color: white;
             border: none;
             cursor: pointer;
             transition: background-color 0.3s;
+            box-sizing: border-box;
         }
-
+    
         .contact-form button:hover {
             background-color: #555;
         }
+    
+     /* Media query pour les petits écrans */
+        @media (max-width: 600px) {
+            .contact-form input {
+                width: 90%; /* Ajuste la largeur sur les petits écrans */
+            }
+            .contact-form button {
+                width: 90%; /* Ajuste la largeur sur les petits écrans */
+            }
+        }
+
 
         .social-section a {
             margin: 0 10px;
