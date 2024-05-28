@@ -25,29 +25,7 @@
 
 
         
-        body {
-    font-family: 'Nunito', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
-    color: #333;
-    overflow-x: hidden;
-}
-
-.header {
-    background: #fff;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-    position: relative;
-}
-
-.header img {
-    width: 150px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    animation: float 3s ease-body {
+       body {
     font-family: 'Nunito', sans-serif;
     margin: 0;
     padding: 0;
@@ -191,37 +169,18 @@
     z-index: 1;
     padding: 0 10px;
     transition: background-color 0.3s;
+    margin-bottom: -20px; /* Adjust to position text correctly */
 }
 
 .contact-border {
     position: absolute;
-    top: 50%;
-    width: 60%;
-    height: 2px;
-    background-color: transparent;
-    border-left: 2px solid #333;
-    border-right: 2px solid #333;
-    z-index: 0;
-    display: flex;
-    justify-content: center;
-}
-
-.contact-border::before,
-.contact-border::after {
-    content: '';
-    width: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(60% - 20px); /* Adjust width based on padding of contact-title */
     height: 2px;
     background-color: #333;
-    position: absolute;
-    top: 0;
-}
-
-.contact-border::before {
-    left: -100%;
-}
-
-.contact-border::after {
-    right: -100%;
+    z-index: 0;
 }
 
 .section:hover .contact-title {
@@ -415,6 +374,7 @@
         <i class="fas fa-envelope"></i>&nbsp; <span>Prise de contact</span>
     </div>
 </div>
+
 
 
 
