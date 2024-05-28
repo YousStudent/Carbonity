@@ -182,17 +182,24 @@
     padding: 10px;
 }
 
-.contact-frame::before {
+.contact-frame::before,
+.contact-frame::after {
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
-    right: 0;
     height: 2px;
     background-color: #333;
-    width: calc(100% - 60px); /* Adjust based on your padding and width */
-    margin: 0 auto;
     z-index: 0;
+}
+
+.contact-frame::before {
+    left: 0;
+    right: 50%; /* Adjust based on your padding and width */
+}
+
+.contact-frame::after {
+    left: 50%; /* Adjust based on your padding and width */
+    right: 0;
 }
 
 @media (max-width: 768px) {
@@ -339,6 +346,7 @@
         transform: translateX(0);
     }
 }
+
 
 
 
