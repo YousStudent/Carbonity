@@ -171,12 +171,17 @@
     background-color: #f5f5f5;
     z-index: 1;
     padding: 0 10px;
+    transition: background-color 0.3s;
+}
+
+.section:hover .contact-title {
+    background-color: #ffffcc; /* Ajustez cette couleur pour correspondre à votre jaune clair */
 }
 
 .contact-border {
     position: absolute;
     top: 50%;
-    width: 100%;
+    width: calc(100% - 20px); /* Ajustez cette valeur pour créer un espace de 10px de chaque côté */
     height: 2px;
     background-color: #333;
     z-index: 0;
