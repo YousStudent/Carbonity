@@ -94,6 +94,8 @@
             padding: 20px;
             padding-top: 10px;
             width: 60%;
+            border-top-left-radius: 10px; /* Arrondir les coins supérieurs gauche et droit */
+            border-top-right-radius: 10px;
         }
 
         .contact-form input {
@@ -155,6 +157,8 @@
             z-index: 1;
             padding: 0 10px;
             transition: background-color 0.3s;
+            border-bottom-left-radius: 10px; /* Arrondir les coins supérieurs gauche et droit */
+            border-bottom-right-radius: 10px;
         }
 
         .contact-border {
@@ -164,6 +168,10 @@
             height: 2px;
             background-color: #333;
             z-index: 0;
+        }
+
+        .contact-title:hover { /* Ajouter la surbrillance jaune au survol */
+            background-color: yellow;
         }
 
         @media (max-width: 768px) {
@@ -182,9 +190,10 @@
 
         /* Section 4: Suivez-nous */
         .social-section a {
-            margin: 0 10px;
+            margin: 0 15px; /* Augmenter la marge pour espacer les icônes */
             color: #333;
             transition: color 0.3s;
+            font-size: 24px; /* Augmenter la taille des icônes */
         }
 
         .social-section a:hover {
@@ -367,10 +376,11 @@
     <section class="section highlight">
         <h2>Notre Vision</h2>
         <p>
-        <p>Carbonity a vocation de devenir un acteur incontournable dans le conseil vers les mobilités de demain.<br>
-        <br>Qu'elles tendent vers la décarbonation, qu'elles soient douces, les mobilités seront surtout intelligentes.<br>
-        <br>Nos missions, d’audit, de conseil et de gestion de projet, envisagent le sourcing des meilleures solutions en matière de mobilité et d’infrastructures de recharge.<br>
-        <br>En somme, un accompagnement complet au service de votre performance énergétique et votre politique RSE.</p>
+            Carbonity a vocation de devenir un acteur incontournable dans le conseil vers les mobilités de demain.<br>
+            <br>Qu'elles tendent vers la décarbonation, qu'elles soient douces, les mobilités seront surtout intelligentes.<br>
+            <br>Nos missions, d’audit, de conseil et de gestion de projet, envisagent le sourcing des meilleures solutions en matière de mobilité et d’infrastructures de recharge.<br>
+            <br>En somme, un accompagnement complet au service de votre performance énergétique et votre politique RSE.
+        </p>
     </section>
 
     <!-- Section 3: Contact -->
@@ -402,11 +412,11 @@
     <section class="section trust-section">
         <h2>Ils nous font confiance</h2>
         <div>
-        <img src="https://i.ibb.co/Vt3x02r/BPI.png" alt="BPI" border="0">
-        <img src="https://i.ibb.co/0j9YWcg/EM.png" alt="EM" border="0">
-        <img src="https://i.ibb.co/Nmmbt6J/FTT.png" alt="FTT" border="0">            
-        <img src="https://i.ibb.co/NmxMmFD/REN.png" alt="REN" border="0">
-        <img src="https://i.ibb.co/ZVnZCtG/EDLV.png" alt="EDLV" border="0">
+            <img src="https://i.ibb.co/Vt3x02r/BPI.png" alt="BPI" border="0">
+            <img src="https://i.ibb.co/0j9YWcg/EM.png" alt="EM" border="0">
+            <img src="https://i.ibb.co/Nmmbt6J/FTT.png" alt="FTT" border="0">            
+            <img src="https://i.ibb.co/NmxMmFD/REN.png" alt="REN" border="0">
+            <img src="https://i.ibb.co/ZVnZCtG/EDLV.png" alt="EDLV" border="0">
         </div>
     </section>
 
