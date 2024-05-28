@@ -10,7 +10,6 @@
     <!-- Inclure Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap">
     <style>
-
         .contact-link {
             cursor: pointer; /* Changer le curseur au survol */
         }
@@ -19,7 +18,6 @@
             color: #ffcc00; /* Changer la couleur du texte au survol */
         }
 
-        
         body {
             font-family: 'Nunito', sans-serif;
             margin: 0;
@@ -87,124 +85,113 @@
             margin: 0 auto 20px;
         }
 
+        .contact-form-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: -20px;
+        }
 
+        .contact-form {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid #333;
+            border-top: none;
+            padding: 20px;
+            padding-top: 10px;
+            width: 60%;
+        }
 
+        .contact-form input {
+            width: 70%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            text-align: center;
+        }
 
+        .contact-form button {
+            width: 30%;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            box-sizing: border-box;
+            text-align: center;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 10px;
+        }
 
-        
+        .contact-form button:hover {
+            background-color: #555;
+        }
 
-    .contact-form-wrapper {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: -20px;
-}
+        .contact-link {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2em;
+            text-align: center;
+            transition: background-color 0.3s;
+            display: inline-block;
+        }
 
-.contact-form {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid #333;
-    border-top: none;
-    padding: 20px;
-    padding-top: 10px;
-    width: 60%;
-}
+        .contact-link:hover {
+            background-color: #555;
+        }
 
-.contact-form input {
-    width: 70%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    text-align: center;
-}
+        .contact-title-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            margin-bottom: 10px;
+        }
 
-.contact-form button {
-    width: 30%;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    box-sizing: border-box;
-    text-align: center;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 10px;
-}
+        .contact-title {
+            position: relative;
+            background-color: #f5f5f5;
+            z-index: 1;
+            padding: 0 10px;
+            transition: background-color 0.3s;
+        }
 
-.contact-form button:hover {
-    background-color: #555;
-}
+        .section:hover .contact-title {
+            background-color: #ffffcc; /* Ajustez cette couleur pour correspondre à votre jaune clair */
+        }
 
-.contact-link {
-    margin-top: 20px;
-    padding: 15px;
-    background-color: #333;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 1.2em;
-    text-align: center;
-    transition: background-color 0.3s;
-    display: inline-block;
-}
+        .contact-border {
+            position: absolute;
+            top: 50%;
+            width: calc(100% - 550px); /* Modifier cette valeur */
+            height: 2px;
+            background-color: #333;
+            z-index: 0;
+               }
 
-.contact-link:hover {
-    background-color: #555;
-}
+        @media (max-width: 768px) {
+            .contact-form {
+                flex-direction: column;
+                width: 80%;
+                padding: 10px;
+            }
 
-.contact-title-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    margin-bottom: 10px;
-}
-
-.contact-title {
-    position: relative;
-    background-color: #f5f5f5;
-    z-index: 1;
-    padding: 0 10px;
-    transition: background-color 0.3s;
-}
-
-
-.section:hover .contact-title {
-    background-color: #ffffcc; /* Ajustez cette couleur pour correspondre à votre jaune clair */
-}
-
-.contact-border {
-    position: absolute;
-    top: 50%;
-    width: calc(100% - 550px); /* Modifier cette valeur */
-    height: 2px;
-    background-color: #333;
-    z-index: 0;
-}
-
-@media (max-width: 768px) {
-    .contact-form {
-        flex-direction: column;
-        width: 80%;
-        padding: 10px;
-    }
-
-    .contact-form input,
-    .contact-form button {
-        width: 100%;
-        margin: 5px 0;
-    }
-}
-
-
-
-
+            .contact-form input,
+            .contact-form button {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
 
         .social-section a {
             margin: 0 10px;
@@ -389,11 +376,6 @@
     </div>
 
 
-
-    
-    
-    
-    
     <div class="section slideInLeft">
     <h2>Contact</h2>
     <div class="contact-title-wrapper">
@@ -413,14 +395,6 @@
 
 
 
-
-
-
-
-    
-
-    
-
     <div class="section social-section slideInRight">
         <h2>Suivez-nous</h2>
         <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
@@ -435,7 +409,6 @@
             <img src="https://i.ibb.co/Nmmbt6J/FTT.png" alt="FTT" border="0">            
             <img src="https://i.ibb.co/NmxMmFD/REN.png" alt="REN" border="0">
             <img src="https://i.ibb.co/ZVnZCtG/EDLV.png" alt="EDLV" border="0">
-        
     </div>
 
     <div class="footer">
@@ -456,7 +429,6 @@
     </div>
 
     <script>
-
         document.querySelector('.contact-link').addEventListener('mouseover', function() {
             this.querySelector('span').style.color = '#ffcc00';
         });
@@ -465,75 +437,13 @@
             this.querySelector('span').style.color = ''; // Réinitialiser la couleur
         });
 
-
-
-        
         document.getElementById('contactButton').onclick = function () {
             document.getElementById('contactModal').style.display = 'flex';
         };
+
         document.getElementById('closeButton').onclick = function () {
             document.getElementById('contactModal').style.display = 'none';
         };
-        window.onclick = function (event) {
-            if (event.target == document.getElementById('contactModal')) {
-                document.getElementById('contactModal').style.display = 'none';
-            }
-        };
-
-        document.getElementById('emailForm').addEventListener('submit', function (event) {
-            event.preventDefault();
-            const email = document.getElementById('email').value;
-            alert('Merci pour votre inscription. Vous serez averti au lancement du site.');
-            document.getElementById('emailForm').reset();
-        });
-
-        document.getElementById('contactForm').addEventListener('submit', function (event) {
-            event.preventDefault();
-            const formData = new FormData(this);
-
-            fetch(this.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            }).then(response => {
-                if (response.ok) {
-                    alert('Votre message a été envoyé avec succès.');
-                    document.getElementById('contactForm').reset();
-                    document.getElementById('contactModal').style.display = 'none';
-                } else {
-                    response.json().then(data => {
-                        if (Object.hasOwn(data, 'errors')) {
-                            alert(data["errors"].map(error => error["message"]).join(", "));
-                        } else {
-                            alert('Une erreur s\'est produite lors de l\'envoi du formulaire.');
-                        }
-                    });
-                }
-            }).catch(error => {
-                alert('Une erreur s\'est produite lors de l\'envoi du formulaire.');
-            });
-        });
-
-        function animateSections() {
-            const sections = document.querySelectorAll('.section');
-            sections.forEach((section, index) => {
-                const sectionPosition = section.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.3;
-                if (sectionPosition < screenPosition) {
-                    section.classList.add('animated');
-                    if (index % 2 === 0) {
-                        section.classList.add('slideInRight');
-                    } else {
-                        section.classList.add('slideInLeft');
-                    }
-                }
-            });
-        }
-
-        window.addEventListener('scroll', animateSections);
-        window.addEventListener('load', animateSections);
     </script>
 
 </body>
