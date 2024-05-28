@@ -10,13 +10,7 @@
     <!-- Inclure Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap">
     <style>
-        .contact-link {
-            cursor: pointer; /* Changer le curseur au survol */
-        }
-
-        .contact-link:hover span {
-            color: #ffcc00; /* Changer la couleur du texte au survol */
-        }
+        /* Styles communs */
 
         body {
             font-family: 'Nunito', sans-serif;
@@ -84,6 +78,16 @@
             max-width: 800px;
             margin: 0 auto 20px;
         }
+
+        .contact-link {
+            cursor: pointer;
+        }
+
+        .contact-link:hover span {
+            color: #ffcc00;
+        }
+
+        /* Styles spécifiques à chaque section */
 
         .contact-form-wrapper {
             position: relative;
@@ -167,7 +171,7 @@
         }
 
         .section:hover .contact-title {
-            background-color: #ffffcc; /* Ajustez cette couleur pour correspondre à votre jaune clair */
+            background-color: #ffffcc;
         }
 
         .contact-border {
@@ -177,7 +181,7 @@
             height: 2px;
             background-color: #333;
             z-index: 0;
-               }
+        }
 
         @media (max-width: 768px) {
             .contact-form {
@@ -267,9 +271,7 @@
         .modal-content h2 {
             margin-bottom: 20px;
             color: #333;
-        }
-
-        .modal-content input,
+               .modal-content input,
         .modal-content textarea {
             width: calc(100% - 20px); /* Réduire la largeur de 20px pour laisser de l'espace pour la marge */
             padding: 10px;
@@ -354,7 +356,6 @@
                 opacity: 1;
                 transform: translateX(0);
             }
-  
         }
     </style>
 </head>
@@ -375,25 +376,22 @@
         <br>En somme, un accompagnement complet au service de votre performance énergétique et votre politique RSE.</p>
     </div>
 
-
     <div class="section slideInLeft">
-    <h2>Contact</h2>
-    <div class="contact-title-wrapper">
-        <span class="contact-title">Être averti au lancement du site</span>
-        <div class="contact-border"></div>
+        <h2>Contact</h2>
+        <div class="contact-title-wrapper">
+            <span class="contact-title">Être averti au lancement du site</span>
+            <div class="contact-border"></div>
+        </div>
+        <div class="contact-form-wrapper">
+            <form id="emailForm" class="contact-form">
+                <input type="email" id="email" placeholder="Renseignez votre e-mail" required>
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
+        <div id="contactButton" class="contact-link">
+            <i class="fas fa-envelope"></i>&nbsp; <span>Prise de contact</span>
+        </div>
     </div>
-    <div class="contact-form-wrapper">
-        <form id="emailForm" class="contact-form">
-            <input type="email" id="email" placeholder="Renseignez votre e-mail" required>
-            <button type="submit">Envoyer</button>
-        </form>
-    </div>
-    <div id="contactButton" class="contact-link">
-        <i class="fas fa-envelope"></i>&nbsp; <span>Prise de contact</span>
-    </div>
-</div>
-
-
 
     <div class="section social-section slideInRight">
         <h2>Suivez-nous</h2>
@@ -404,11 +402,11 @@
 
     <div class="section trust-section slideInLeft">
         <h2>Ils nous font confiance</h2>
-            <img src="https://i.ibb.co/Vt3x02r/BPI.png" alt="BPI" border="0">
-            <img src="https://i.ibb.co/0j9YWcg/EM.png" alt="EM" border="0">
-            <img src="https://i.ibb.co/Nmmbt6J/FTT.png" alt="FTT" border="0">            
-            <img src="https://i.ibb.co/NmxMmFD/REN.png" alt="REN" border="0">
-            <img src="https://i.ibb.co/ZVnZCtG/EDLV.png" alt="EDLV" border="0">
+        <img src="https://i.ibb.co/Vt3x02r/BPI.png" alt="BPI" border="0">
+        <img src="https://i.ibb.co/0j9YWcg/EM.png" alt="EM" border="0">
+        <img src="https://i.ibb.co/Nmmbt6J/FTT.png" alt="FTT" border="0">            
+        <img src="https://i.ibb.co/NmxMmFD/REN.png" alt="REN" border="0">
+        <img src="https://i.ibb.co/ZVnZCtG/EDLV.png" alt="EDLV" border="0">
     </div>
 
     <div class="footer">
@@ -440,12 +438,33 @@
         document.getElementById('contactButton').onclick = function () {
             document.getElementById('contactModal').style.display = 'flex';
         };
-
         document.getElementById('closeButton').onclick = function () {
             document.getElementById('contactModal').style.display = 'none';
         };
-    </script>
+        window.onclick = function (event) {
+            if (event.target == document.getElementById('contactModal')) {
+                document.getElementById('contactModal').style.display = 'none';
+            }
+        };
 
+        document.getElementById('emailForm').onsubmit = function (event) {
+            event.preventDefault();
+            var email = document.getElementById('email').value;
+            if (validateEmail(email)) {
+                alert('Merci de vous être inscrit !');
+                document.getElementById('email').value = '';
+            } else {
+                alert('Veuillez entrer une adresse email valide.');
+            }
+        };
+
+        function validateEmail(email) {
+            var re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            return re.test(email);
+        }
+    </script>
 </body>
 
 </html>
+
+
