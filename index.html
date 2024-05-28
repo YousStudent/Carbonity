@@ -105,7 +105,6 @@
     justify-content: center;
     align-items: center;
     border: 2px solid #333;
-    border-top: none;
     padding: 10px;
     width: 60%;
     box-sizing: border-box;
@@ -160,10 +159,10 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    margin-bottom: -10px; /* Adjust to position text correctly */
 }
 
 .contact-title {
-    position: relative;
     background-color: transparent; /* Change to transparent to match section */
     z-index: 1;
     padding: 0 10px;
@@ -175,7 +174,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: calc(100% - 40px); /* Adjust width based on padding of contact-title */
+    width: 100%;
     height: 2px;
     background-color: #333;
     z-index: 0;
@@ -183,7 +182,6 @@
 
 .contact-frame {
     border: 2px solid #333;
-    border-top: none;
     position: relative;
     width: 60%;
     height: auto;
@@ -193,24 +191,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.contact-frame:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    border-top: 2px solid #333;
-    border-left: 2px solid #333;
-    border-right: 2px solid #333;
-    width: calc(100% - 20px);
-    height: 2px;
-    margin: 0 auto;
-}
-
-.contact-frame:hover .contact-title {
-    background-color: #ffffcc; /* Ensure the title matches the section highlight */
 }
 
 @media (max-width: 768px) {
@@ -361,6 +341,7 @@
 
 
 
+
         
 
 
@@ -393,15 +374,12 @@
     <h2>Contact</h2>
     <div class="contact-title-wrapper">
         <span class="contact-title">Être averti au lancement du site</span>
-        <div class="contact-border"></div>
     </div>
     <div class="contact-form-wrapper">
-        <div class="contact-frame">
-            <form id="emailForm" class="contact-form">
-                <input type="email" id="email" placeholder="Renseignez votre e-mail" required>
-                <button type="submit">Envoyer</button>
-            </form>
-        </div>
+        <form id="emailForm" class="contact-form">
+            <input type="email" id="email" placeholder="Renseignez votre e-mail" required>
+            <button type="submit">Envoyer</button>
+        </form>
     </div>
     <div id="contactButton" class="contact-link">
         <i class="fas fa-envelope"></i>&nbsp; <span>Prise de contact</span>
