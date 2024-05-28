@@ -183,10 +183,10 @@
 
 .contact-border {
     position: absolute;
-    top: 50%;
+    top: calc(50% + 10px); /* Réglez la position du cadre en fonction de la taille du texte */
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
+    transform: translateX(-50%);
+    width: 90%; /* Ajustez la largeur du cadre en fonction de vos besoins */
     height: 2px;
     background-color: #333;
     z-index: 0;
