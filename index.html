@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,152 +14,240 @@
             font-family: 'Nunito', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #ffffff;
+            background-color: #f5f5f5;
             color: #333;
             overflow-x: hidden;
         }
-        .container {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+
+        /* Section 1: Header */
+        .header {
+            background: #fff;
+            color: white;
+            padding: 20px 0;
             text-align: center;
-            padding: 20px;
             position: relative;
-            z-index: 1;
         }
-        .logo-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 20px;
+
+        .header img {
+            width: 150px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            animation: float 3s ease-in-out infinite;
         }
-        .logo {
-            width: 400px;
-            animation: bounceIn 2s ease-out 1;
-            object-fit: cover; /* Ajuster pour ne pas cacher le texte */
-        }
-        @keyframes bounceIn {
-            0% {
-                transform: scale(0.3);
-                opacity: 0;
-            }
-            50% {
-                transform: scale(1.1);
-                opacity: 1;
-            }
-            70% {
-                transform: scale(0.9);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
-        .tagline {
+
+        .header .tagline {
             font-size: 1.2em;
-            margin-bottom: 20px;
+            margin: 10px 0;
+            color: #333;
         }
-        .arrive-soon {
+
+        .header .arrive-soon {
             font-size: 1.5em;
             font-weight: bold;
-            margin-bottom: 40px;
+            color: #333;
         }
-        .info-section {
-            width: 100%;
+
+        /* Section 2: Notre Vision */
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        .section:nth-child(even) {
+            background-color: #e0e0e0;
+        }
+
+        .section:nth-child(1),
+        .trust-section {
+            background-color: #ffffff;
+        }
+
+        .section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .section p {
+            font-size: 1.1em;
             max-width: 800px;
+            margin: 0 auto 20px;
+        }
+
+        /* Section 3: Contact */
+        .contact-form-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: -20px;
+        }
+
+        .contact-form {
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
-            background-color: #b0b0b0;
-            padding: 20px;
-            text-align: left;
-            margin-bottom: 0;
-            border: none;
-        }
-        .info-box {
-            flex: 1;
-            padding: 10px;
-        }
-        .info-box h3 {
-            margin-top: 0;
-        }
-        .info-box p {
-            margin-bottom: 10px;
-            white-space: pre-line; /* Pour permettre les sauts de ligne */
-            text-align: justify;
-        }
-        .info-box form {
-            display: flex;
+            justify-content: center;
             align-items: center;
+            border: 2px solid #333;
+            border-top: none;
+            padding: 20px;
+            padding-top: 10px;
+            width: 60%;
+            border-top-left-radius: 10px; /* Arrondir les coins supérieurs gauche et droit */
+            border-top-right-radius: 10px;
         }
-        .info-box input[type="email"] {
+
+        .contact-form input {
+            width: 70%;
             padding: 10px;
             border: 1px solid #ccc;
-            flex: 1;
-        }
-        .info-box button {
-            padding: 10px 20px;
-            border: none;
-            background: #0056b3;
-            color: white;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        .info-box button:hover {
-            background: #003d80;
-        }
-        .separator {
-            width: 2px;
-            background-color: #ccc;
-            margin: 0 10px;
-        }
-        .social-section {
-            width: 100%;
-            max-width: 800px;
-            background-color: #b0b0b0;
-            padding: 20px;
-            margin-bottom: 0;
+            box-sizing: border-box;
             text-align: center;
         }
+
+        .contact-form button {
+            width: 30%;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            box-sizing: border-box;
+            text-align: center;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 10px;
+        }
+
+        .contact-form button:hover {
+            background-color: #555;
+        }
+
+        .contact-link {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2em;
+            text-align: center;
+            transition: background-color 0.3s;
+            display: inline-block;
+        }
+
+        .contact-link:hover {
+            background-color: #555;
+        }
+
+        .contact-title-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        .contact-title h2 {
+            font-size: 2em; /* ou toute autre taille de police appropriée */
+        }
+
+        contact-title {
+            position: relative;
+            background-color: #f5f5f5;
+            z-index: 1;
+            margin: 0 -1cm; /* Décale le cadre de 1 cm vers la gauche et vers la droite */
+            padding: 0 1cm; /* Ajoute un espace de 1 cm à gauche et à droite du texte */
+            font-size: 1.2em; /* Taille de police fixe */
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+
+        .contact-border {
+            position: absolute;
+            top: 50%;
+            width: calc(100% - 550px);
+            height: 2px;
+            background-color: #333;
+            z-index: 0;
+        }
+
+        .contact-title:hover {
+            background-color: yellow !important;
+        }
+
+        @media (max-width: 768px) {
+            .contact-form {
+                flex-direction: column;
+                width: 80%;
+                padding: 10px;
+            }
+
+            .contact-form input,
+            .contact-form button {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+
+        /* Section 4: Suivez-nous */
         .social-section a {
-            margin: 0 10px;
+            margin: 0 15px; /* Augmenter la marge pour espacer les icônes */
             color: #333;
             transition: color 0.3s;
+            font-size: 24px; /* Augmenter la taille des icônes */
         }
+
         .social-section a:hover {
             color: #0056b3;
         }
-        .trust-section {
-            width: 100%;
-            max-width: 800px;
-            background-color: #004080;
-            padding: 20px;
-            text-align: center;
-            color: white;
-        }
-        .trust-section h3 {
-            text-align: left;
-            margin: 0 0 10px 0;
-        }
+
+        /* Section 5: Ils nous font confiance */
         .trust-section img {
-            margin: 10px;
+            margin: 20px;
             height: 50px;
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
         }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* Section 6: Copyright */
         .footer {
-            width: 100%;
-            text-align: center;
+            background: #333;
+            color: white;
             padding: 20px;
-            font-size: 0.9em;
+            text-align: center;
         }
+
         .footer a {
             color: #0056b3;
             text-decoration: none;
-            transition: color 0.3s;
         }
+
         .footer a:hover {
             color: #003d80;
         }
+
+        /* Modal */
         .modal {
             display: none;
             position: fixed;
@@ -171,6 +260,7 @@
             align-items: center;
             z-index: 9999;
         }
+
         .modal-content {
             background: white;
             padding: 20px;
@@ -179,7 +269,40 @@
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             position: relative;
+            border-radius: 8px;
         }
+
+        .modal-content h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .modal-content input,
+        .modal-content textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px auto;
+            display: block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .modal-content button {
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .modal-content button:hover {
+            background-color: #555;
+        }
+
         .close {
             position: absolute;
             top: 10px;
@@ -189,264 +312,174 @@
             color: #333;
             transition: color 0.3s;
         }
+
         .close:hover {
             color: #0056b3;
         }
-        form {
-            display: flex;
-            flex-direction: column;
+
+        /* Animation */
+        .animated {
+            opacity: 0;
+            transition: opacity 1s, transform 1s;
         }
-        input, textarea {
-            margin-bottom: 10px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            font-family: 'Nunito', sans-serif;
+
+        .animated.slideInRight {
+            opacity: 1;
+            transform: translateX(0);
         }
-        button {
-            padding: 10px;
-            border: none;
-            background: #007bff;
-            color: white;
-            cursor: pointer;
-            transition: background 0.3s;
+
+        .animated.slideInLeft {
+            opacity: 1;
+            transform: translateX(0);
         }
-        button:hover {
-            background: #0056b3;
+
+        .section.slideInLeft {
+            animation: slideInLeft 2s forwards;
         }
-        .contact-link {
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #007bff;
-            color: white;
-            transition: background 0.3s;
+
+        .section.slideInRight {
+            animation: slideInRight 2s forwards;
         }
-        .contact-link:hover {
-            background-color: #0056b3;
-        }
-        .contact-link:hover i {
-            cursor: pointer;
-        }
-        .background-image {
-            background: url('/mnt/data/mon-slide-canva.jpg') no-repeat center center;
-            background-size: cover;
-            width: 100%;
-            height: 100vh;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            opacity: 0.2;
-        }
-        .products-services-section {
-            width: 100%;
-            max-width: 800px;
-            background-color: #d0d0d0;
-            padding: 20px;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .product {
-            display: inline-block;
-            width: 200px;
-            height: 300px;
-            background-color: #f0f0f0;
-            border-radius: 15px;
-            margin: 10px;
-            position: relative;
-            overflow: hidden;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-        .product:hover {
-            background-color: #ffe600;
-            transform: translateY(-5px);
-        }
-        .product::before {
-            content: "À venir";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(-45deg);
-            font-size: 2em;
-            color: rgba(0, 0, 0, 0.1);
-        }
-        .section-highlight {
-            background: yellow;
-            height: 0;
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 0;
-            transition: height 0.3s;
-            z-index: -1;
-        }
-        .info-box:hover .section-highlight {
-            height: 100%;
-        }
-        @media only screen and (max-width: 768px) {
-            .container {
-                width: 90%;
-                padding: 10px;
+
+        @keyframes slideInLeft {
+            0% {
+                opacity: 0;
+                transform: translateX(-20px);
             }
-            .tagline {
-                font-size: 1em;
-                margin-bottom: 15px;
+
+            100% {
+                opacity: 1;
+                transform: translateX(0);
             }
-            .arrive-soon {
-                font-size: 1.2em;
-                margin-bottom: 30px;
+        }
+
+        @keyframes slideInRight {
+            0% {
+                opacity: 0;
+                transform: translateX(20px);
             }
-            .info-section {
-                flex-direction: column;
-                text-align: center;
+
+            100% {
+                opacity: 1;
+                transform: translateX(0);
             }
-            .separator {
-                display: none;
-            }
-            .info-box {
-                margin-bottom: 20px;
-            }
-            .social-section a {
-                display: block;
-                margin: 10px 0;
-            }
-            .products-services-section {
-                text-align: center;
-            }
-            .product {
-                width: 80%;
-                margin: 10px auto;
-            }
+        }
+
+        /* Surbrillance */
+        .highlight:hover {
+            background-color: yellow !important;
         }
     </style>
 </head>
+
 <body>
-    <div class="background-image"></div>
-    <div class="container">
-        <div class="logo-section">
-            <img src="https://i.ibb.co/nDssBZB/Capture-d-cran-2024-05-27-011750.png" alt="Logo Carbonity" class="logo">
-            <div class="tagline">FOURNISSEUR DE SOLUTIONS DE MOBILITÉS INTELLIGENTES</div>
-            <div class="arrive-soon">ARRIVE BIENTÔT</div>
-        </div>
+    <!-- Section 1: Header -->
+    <header class="header">
+        <img src="https://i.ibb.co/djgDfps/CARBONITY.png" alt="CARBONITY" class="logo">
+        <div class="tagline">Fournisseur de solutions de mobilités intelligentes</div>
+        <div class="arrive-soon">Arrive bientôt</div>
+    </header>
 
-        <div class="info-section">
-            <div class="info-box">
-                <h3>Notre Vision</h3>
-                <p>Carbonity a vocation de devenir un acteur incontournable dans le conseil vers les mobilités de demain.
-Qu'elles tendent vers la décarbonation, qu'elles soient douces, les mobilités seront surtout intelligentes.
-                Nos solutions, mobilisant la Data via des technologies comme l'IA, pourront élaborer des Plans de Mobilités et
-                réaliser des audits de flottes de véhicules.</p>
-            </div>
-            <div class="separator"></div>
-            <div class="info-box">
-                <h3>Contact</h3>
-                <div class="subtitle">Être averti au lancement du site</div>
-                <form id="emailForm">
-                    <input type="email" id="email" placeholder="renseigner votre e-mail" required>
-                    <button type="submit">Envoyer</button>
-                </form>
-                <div id="contactButton" class="contact-link">
-                    <i class="fas fa-envelope"></i>&nbsp; Prise de contact
-                </div>
-            </div>
-        </div>
+    <!-- Section 2: Notre Vision -->
+    <section class="section highlight">
+        <h2>Notre Vision</h2>
+        <p>
+            Carbonity a vocation de devenir un acteur incontournable dans le conseil vers les mobilités de demain.<br>
+            <br>Qu'elles tendent vers la décarbonation, qu'elles soient douces, les mobilités seront surtout intelligentes.<br>
+            <br>Nos missions, d’audit, de conseil et de gestion de projet, envisagent le sourcing des meilleures solutions en matière de mobilité et d’infrastructures de recharge.<br>
+            <br>En somme, un accompagnement complet au service de votre performance énergétique et votre politique RSE.
+        </p>
+    </section>
 
-        <div class="products-services-section">
-            <h3>Nos produits et services</h3>
-            <div class="product"></div>
-            <div class="product"></div>
-            <div class="product"></div>
-            <div class="product"></div>
+   <!-- Section 3: Contact -->
+<section class="section highlight">
+    <div class="contact-title-wrapper">
+        <div class="contact-title">
+            <h2>Être averti au lancement du site</h2>
         </div>
+        <!-- Supprimer la ligne horizontale -->
+    </div>
+    <div class="contact-form-wrapper">
+        <form id="emailForm" class="contact-form">
+            <input type="email" id="email" placeholder="Renseignez votre e-mail" required>
+            <button type="submit">S'inscrire</button>
+        </form>
+    </div>
+    <button class="contact-link" id="contactButton">Nous contacter directement</button>
+</section>
 
-        <div class="social-section">
-            <a href="#"><i class="fab fa-X fa-2x"></i></a>
-            <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
-            <a href="#"><i class="fab fa-google-plus fa-2x"></i></a>
-        </div>
+<!-- Section 4: Suivez-nous -->
+<section class="section highlight social-section">
+    <h2>Suivez-nous</h2>
+    <a href="https://www.facebook.com/carbonity.co" target="_blank"><i class="fab fa-facebook" style="font-size: 40px;"></i></a>
+    <a href="https://www.twitter.com/carbonity.co" target="_blank"><i class="fab fa-twitter" style="font-size: 40px;"></i></a>
+    <a href="https://www.linkedin.com/company/carbonity-co/?viewAsMember=true" target="_blank"><i class="fab fa-linkedin" style="font-size: 40px;"></i></a>
+</section>
 
-        <div class="trust-section">
-            <h3>Ils nous font confiance</h3>
+
+
+    <!-- Section 5: Ils nous font confiance -->
+    <section class="section trust-section">
+        <h2>Ils nous font confiance</h2>
+        <div>
             <img src="https://i.ibb.co/Vt3x02r/BPI.png" alt="BPI" border="0">
             <img src="https://i.ibb.co/0j9YWcg/EM.png" alt="EM" border="0">
             <img src="https://i.ibb.co/Nmmbt6J/FTT.png" alt="FTT" border="0">            
             <img src="https://i.ibb.co/NmxMmFD/REN.png" alt="REN" border="0">
             <img src="https://i.ibb.co/ZVnZCtG/EDLV.png" alt="EDLV" border="0">
         </div>
+    </section>
 
-        <div class="footer">
-            &copy; 2024 Carbonity | <a href="#" id="legalLink">Mentions légales</a>
-        </div>
-    </div>
+    <!-- Section 6: Copyright -->
+    <footer class="footer">
+        <p>&copy; 2024 Carbonity. Tous droits réservés. <a href="mentions_legales.html">Mentions légales</a>.</p>
+    </footer>
 
-    <!-- Pop-up pour le formulaire de contact -->
-    <div class="modal" id="contactModal">
+    <!-- Modal -->
+    <div id="contactModal" class="modal">
         <div class="modal-content">
-            <span class="close" id="closeButton">&times;</span>
-            <h2>Prise de contact</h2>
-            <form id="contactForm" action="https://formspree.io/f/xleqkayr" method="POST">
-                <input type="text" id="name" name="name" placeholder="Nom" required>
-                <input type="email" id="email" name="email" placeholder="Email" required>
-                <textarea id="message" name="message" rows="4" placeholder="Message" required></textarea>
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Contactez-nous</h2>
+            <form>
+                <input type="text" placeholder="Votre nom" required>
+                <input type="email" placeholder="Votre email" required>
+                <textarea placeholder="Votre message" required></textarea>
                 <button type="submit">Envoyer</button>
             </form>
         </div>
     </div>
 
     <script>
-        // JavaScript pour ouvrir et fermer le pop-up
-        document.getElementById('contactButton').onclick = function() {
+        document.getElementById('contactButton').onclick = function () {
             document.getElementById('contactModal').style.display = 'flex';
         };
-        document.getElementById('closeButton').onclick = function() {
+
+        document.getElementById('closeModal').onclick = function () {
             document.getElementById('contactModal').style.display = 'none';
         };
-        window.onclick = function(event) {
+
+        window.onclick = function (event) {
             if (event.target == document.getElementById('contactModal')) {
                 document.getElementById('contactModal').style.display = 'none';
             }
         };
 
-        // Notification après l'envoi du formulaire
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Empêcher l'envoi du formulaire normal
-            const formData = new FormData(this);
-
-            fetch(this.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            }).then(response => {
-                if (response.ok) {
-                    alert('Votre message a été envoyé avec succès.');
-                    document.getElementById('contactForm').reset();
-                    document.getElementById('contactModal').style.display = 'none';
-                } else {
-                    response.json().then(data => {
-                        if (Object.hasOwn(data, 'errors')) {
-                            alert(data["errors"].map(error => error["message"]).join(", "));
-                        } else {
-                            alert('Une erreur s\'est produite lors de l\'envoi du formulaire.');
-                        }
-                    });
-                }
-            }).catch(error => {
-                alert('Une erreur s\'est produite lors de l\'envoi du formulaire.');
-            });
-        });
-
-        // Gérer la soumission du formulaire d'e-mail
-        document.getElementById('emailForm').addEventListener('submit', function(event) {
+        document.getElementById('emailForm').onsubmit = function (event) {
             event.preventDefault();
-            const email = document.getElementById('email').value;
-            console.log('Email envoyé:', email); // Remplacez ceci par votre logique de traitement
-            alert('Merci pour votre inscription. Vous serez averti au lancement du site.');
-            document.getElementById('emailForm').reset();
-        });
+            var email = document.getElementById('email').value;
+            if (validateEmail(email)) {
+                alert('Merci de vous être inscrit !');
+                document.getElementById('email').value = '';
+            } else {
+                alert('Veuillez entrer une adresse email valide.');
+            }
+        };
+
+        function validateEmail(email) {
+            var re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            return re.test(email);
+        }
     </script>
 </body>
+
 </html>
