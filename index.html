@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carbonity - Fournisseur de solutions de mobilités intelligentes</title>
+    <title>Carbonity - Fournisseur de solutions de mobilitÃ©s intelligentes</title>
     <!-- Inclure Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Inclure Google Fonts -->
@@ -53,6 +53,8 @@
             padding: 60px 20px;
             text-align: center;
             transition: background-color 0.3s;
+            position: relative;
+            overflow: hidden;
         }
 
         .section:nth-child(even) {
@@ -75,11 +77,30 @@
             margin: 0 auto 20px;
         }
 
+        /* Surbrillance */
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background-color: yellow;
+            transition: height 0.3s;
+            z-index: -1;
+        }
+
+        .section:hover::before {
+            height: 100%;
+        }
+
         /* Section 3: Nos produits et services */
         .products-services-section {
             background-color: #dfe6e9;
             padding: 60px 20px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
 
         .products-services-section .offer {
@@ -127,7 +148,7 @@
             padding: 20px;
             padding-top: 10px;
             width: 60%;
-            border-top-left-radius: 10px; /* Arrondir les coins supérieurs gauche et droit */
+            border-top-left-radius: 10px; /* Arrondir les coins supÃ©rieurs gauche et droit */
             border-top-right-radius: 10px;
         }
 
@@ -185,22 +206,21 @@
         }
 
         .contact-title h2 {
-            font-size: 2em; /* ou toute autre taille de police appropriée */
+            font-size: 2em; /* ou toute autre taille de police appropriÃ©e */
         }
 
-        contact-title {
+        .contact-title {
             position: relative;
             background-color: #f5f5f5;
             z-index: 1;
-            margin: 0 -1cm; /* Décale le cadre de 1 cm vers la gauche et vers la droite */
-            padding: 0 1cm; /* Ajoute un espace de 1 cm à gauche et à droite du texte */
+            margin: 0 -1cm; /* DÃ©cale le cadre de 1 cm vers la gauche et vers la droite */
+            padding: 0 1cm; /* Ajoute un espace de 1 cm Ã  gauche et Ã  droite du texte */
             font-size: 1.2em; /* Taille de police fixe */
             border-top-left-radius: 8px;
             border-top-right-radius: 8px;
             border-bottom-left-radius: 20px;
             border-bottom-right-radius: 20px;
         }
-
 
         .contact-border {
             position: absolute;
@@ -230,15 +250,36 @@
         }
 
         /* Section 5: Suivez-nous */
+        .social-section {
+            position: relative;
+            overflow: hidden;
+        }
+
         .social-section a {
-            margin: 0 15px; /* Augmenter la marge pour espacer les icônes */
+            margin: 0 15px; /* Augmenter la marge pour espacer les icÃ´nes */
             color: #333;
             transition: color 0.3s;
-            font-size: 24px; /* Augmenter la taille des icônes */
+            font-size: 24px; /* Augmenter la taille des icÃ´nes */
         }
 
         .social-section a:hover {
             color: #0056b3;
+        }
+
+        .social-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background-color: yellow;
+            transition: height 0.3s;
+            z-index: -1;
+        }
+
+        .social-section:hover::before {
+            height: 100%;
         }
 
         /* Section 6: Ils nous font confiance */
@@ -317,7 +358,7 @@
             margin: 10px auto;
             display: block;
             border: 1px solid #ccc;
-            border-radius: 4px
+            border-radius: 4px;
             box-sizing: border-box;
         }
 
@@ -398,27 +439,6 @@
             }
         }
 
-        /* Surbrillance */
-        .highlight {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .highlight::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 0;
-            background-color: yellow;
-            transition: height 0.3s;
-            z-index: -1;
-        }
-
-        .highlight:hover::before {
-            height: 100%;
-        }
     </style>
 </head>
 
@@ -426,18 +446,18 @@
     <!-- Section 1: Header -->
     <header class="header">
         <img src="https://i.ibb.co/djgDfps/CARBONITY.png" alt="CARBONITY" class="logo">
-        <div class="tagline">Fournisseur de solutions de mobilités intelligentes</div>
-        <div class="arrive-soon">Arrive bientôt</div>
+        <div class="tagline">Fournisseur de solutions de mobilitÃ©s intelligentes</div>
+        <div class="arrive-soon">Arrive bientÃ´t</div>
     </header>
 
     <!-- Section 2: Notre Vision -->
     <section class="section highlight">
         <h2>Notre Vision</h2>
         <p>
-            Carbonity a vocation de devenir un acteur incontournable dans le conseil vers les mobilités de demain.<br>
-            <br>Qu'elles tendent vers la décarbonation, qu'elles soient douces, les mobilités seront surtout intelligentes.<br>
-            <br>Nos missions, d’audit, de conseil et de gestion de projet, envisagent le sourcing des meilleures solutions en matière de mobilité et d’infrastructures de recharge.<br>
-            <br>En somme, un accompagnement complet au service de votre performance énergétique et votre politique RSE.
+            Carbonity a vocation de devenir un acteur incontournable dans le conseil vers les mobilitÃ©s de demain.<br>
+            <br>Qu'elles tendent vers la dÃ©carbonation, qu'elles soient douces, les mobilitÃ©s seront surtout intelligentes.<br>
+            <br>Nos missions, dâaudit, de conseil et de gestion de projet, envisagent le sourcing des meilleures solutions en matiÃ¨re de mobilitÃ© et dâinfrastructures de recharge.<br>
+            <br>En somme, un accompagnement complet au service de votre performance Ã©nergÃ©tique et votre politique RSE.
         </p>
     </section>
 
@@ -454,7 +474,7 @@
     <section class="section highlight">
         <div class="contact-title-wrapper">
             <div class="contact-title">
-                <h2>Être averti au lancement du site</h2>
+                <h2>Ãtre averti au lancement du site</h2>
             </div>
         </div>
         <div class="contact-form-wrapper">
@@ -488,7 +508,7 @@
 
     <!-- Section 7: Copyright -->
     <footer class="footer">
-        <p>&copy; 2024 Carbonity. Tous droits réservés. <a href="mentions_legales.html">Mentions légales</a>.</p>
+        <p>&copy; 2024 Carbonity. Tous droits rÃ©servÃ©s. <a href="mentions_legales.html">Mentions lÃ©gales</a>.</p>
     </footer>
 
     <!-- Modal -->
@@ -524,7 +544,7 @@
             event.preventDefault();
             var email = document.getElementById('email').value;
             if (validateEmail(email)) {
-                alert('Merci de vous être inscrit !');
+                alert('Merci de vous Ãªtre inscrit !');
                 document.getElementById('email').value = '';
             } else {
                 alert('Veuillez entrer une adresse email valide.');
