@@ -75,7 +75,37 @@
             margin: 0 auto 20px;
         }
 
-        /* Section 3: Contact */
+        /* Section 3: Nos produits et services */
+        .products-services-section {
+            background-color: #dfe6e9;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .products-services-section .offer {
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px;
+            display: inline-block;
+            width: calc(25% - 40px);
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .products-services-section .offer::after {
+            content: "A venir";
+            font-size: 2em;
+            color: rgba(0, 0, 0, 0.1);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-30deg);
+            white-space: nowrap;
+        }
+
+        /* Section 4: Contact */
         .contact-form-wrapper {
             position: relative;
             display: flex;
@@ -196,7 +226,7 @@
             }
         }
 
-        /* Section 4: Suivez-nous */
+        /* Section 5: Suivez-nous */
         .social-section a {
             margin: 0 15px; /* Augmenter la marge pour espacer les icônes */
             color: #333;
@@ -208,7 +238,7 @@
             color: #0056b3;
         }
 
-        /* Section 5: Ils nous font confiance */
+        /* Section 6: Ils nous font confiance */
         .trust-section img {
             margin: 20px;
             height: 50px;
@@ -230,7 +260,7 @@
             }
         }
 
-        /* Section 6: Copyright */
+        /* Section 7: Copyright */
         .footer {
             background: #333;
             color: white;
@@ -391,34 +421,52 @@
         </p>
     </section>
 
-   <!-- Section 3: Contact -->
-<section class="section highlight">
-    <div class="contact-title-wrapper">
-        <div class="contact-title">
-            <h2>Être averti au lancement du site</h2>
+    <!-- Section 3: Nos produits et services -->
+    <section class="products-services-section highlight">
+        <h2>Nos produits et services</h2>
+        <div class="offer">
+            <h3>Produit 1</h3>
+            <p>Description du produit 1.</p>
         </div>
-        <!-- Supprimer la ligne horizontale -->
-    </div>
-    <div class="contact-form-wrapper">
-        <form id="emailForm" class="contact-form">
-            <input type="email" id="email" placeholder="Renseignez votre e-mail" required>
-            <button type="submit">S'inscrire</button>
-        </form>
-    </div>
-    <button class="contact-link" id="contactButton">Nous contacter directement</button>
-</section>
+        <div class="offer">
+            <h3>Produit 2</h3>
+            <p>Description du produit 2.</p>
+        </div>
+        <div class="offer">
+            <h3>Service 1</h3>
+            <p>Description du service 1.</p>
+        </div>
+        <div class="offer">
+            <h3>Service 2</h3>
+            <p>Description du service 2.</p>
+        </div>
+    </section>
 
-<!-- Section 4: Suivez-nous -->
-<section class="section highlight social-section">
-    <h2>Suivez-nous</h2>
-    <a href="https://www.facebook.com/carbonity.co" target="_blank"><i class="fab fa-facebook" style="font-size: 40px;"></i></a>
-    <a href="https://www.twitter.com/carbonity.co" target="_blank"><i class="fab fa-twitter" style="font-size: 40px;"></i></a>
-    <a href="https://www.linkedin.com/company/carbonity-co/?viewAsMember=true" target="_blank"><i class="fab fa-linkedin" style="font-size: 40px;"></i></a>
-</section>
+    <!-- Section 4: Contact -->
+    <section class="section highlight">
+        <div class="contact-title-wrapper">
+            <div class="contact-title">
+                <h2>Être averti au lancement du site</h2>
+            </div>
+        </div>
+        <div class="contact-form-wrapper">
+            <form id="emailForm" class="contact-form">
+                <input type="email" id="email" placeholder="Renseignez votre e-mail" required>
+                <button type="submit">S'inscrire</button>
+            </form>
+        </div>
+        <button class="contact-link" id="contactButton">Nous contacter directement</button>
+    </section>
 
+    <!-- Section 5: Suivez-nous -->
+    <section class="section highlight social-section">
+        <h2>Suivez-nous</h2>
+        <a href="https://www.facebook.com/carbonity.co" target="_blank"><i class="fab fa-facebook" style="font-size: 40px;"></i></a>
+        <a href="https://www.twitter.com/carbonity.co" target="_blank"><i class="fab fa-twitter" style="font-size: 40px;"></i></a>
+        <a href="https://www.linkedin.com/company/carbonity-co/?viewAsMember=true" target="_blank"><i class="fab fa-linkedin" style="font-size: 40px;"></i></a>
+    </section>
 
-
-    <!-- Section 5: Ils nous font confiance -->
+    <!-- Section 6: Ils nous font confiance -->
     <section class="section trust-section">
         <h2>Ils nous font confiance</h2>
         <div>
@@ -430,7 +478,7 @@
         </div>
     </section>
 
-    <!-- Section 6: Copyright -->
+    <!-- Section 7: Copyright -->
     <footer class="footer">
         <p>&copy; 2024 Carbonity. Tous droits réservés. <a href="mentions_legales.html">Mentions légales</a>.</p>
     </footer>
