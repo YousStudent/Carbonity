@@ -78,7 +78,7 @@
             overflow: hidden;
         }
 
-        .products-services-section .offer {
+        .products-services-section.offer {
             background-color: #ffffff;
             background-size: cover;
             background-position: center;
@@ -93,7 +93,7 @@
             position: relative;
         }
 
-        .products-services-section .offer::after {
+        .products-services-section.offer::after {
             content: "A venir";
             font-size: 2em;
             color: rgba(0, 0, 0, 0.1);
@@ -178,6 +178,22 @@
 
         .contact-link:hover {
             background-color: #555;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background-color: yellow;
+            transition: height 0.3s;
+            z-index: -1;
+        }
+
+        .contact-section:hover::before {
+            height: 100%;
         }
 
         /* Section 5: Suivez-nous */
