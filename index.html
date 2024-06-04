@@ -68,6 +68,22 @@
             margin: 0 auto 20px;
         }
 
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background-color: yellow;
+            transition: height 0.3s;
+            z-index: -1;
+        }
+
+        .section:hover::before {
+            height: 100%;
+        }
+
         
         /* Section 3: Nos produits et services */
         .products-services-section {
