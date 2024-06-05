@@ -19,6 +19,25 @@
             overflow-x: hidden;
         }
 
+        .section {
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .section.in-view {
+            opacity: 1;
+        }
+        
+        .separator {
+            height: 6px;
+            background-color: #000000;
+            margin: 0px 0;
+        }
+
         /* Section 1: Header */
         .header {
             background: #fff;
@@ -48,25 +67,14 @@
             color: #333;
         }
 
-        .separator {
-            height: 6px;
-            background-color: #000000;
-            margin: 0px 0;
-        }
-
+        
         /* Section 2: Notre Vision */
-        .section {
+        /*.section {
             padding: 80px 20px;
             text-align: center;
             position: relative;
             overflow: hidden;
-            opacity: 0;
-            transition: opacity 2s ease-in-out;
-        }
-
-        .section.in-view {
-            opacity: 1;
-        }
+        }*/
 
         .section h2 {
             font-size: 2em;
@@ -96,19 +104,12 @@
         }
             
         /* Section 3: Notre offre */
-        .offer-section {
-            /*background-color: #dfe6e9;*/
+        /*.offer-section {
             padding: 60px 20px;
             text-align: center;
             position: relative;
             overflow: hidden;
-            opacity: 0;
-            transition: opacity 2s ease-in-out;
-        }
-
-        .offer-section.in-view {
-            opacity: 1;
-        }
+        }*/
 
         .offer-section .offer {
             background-color: #ffffff;
@@ -228,10 +229,10 @@
         }
 
         /* Section 5: Suivez-nous */
-        .social-section {
+        /*.social-section {
             position: relative;
             overflow: hidden;
-        }
+        }*/
 
         .social-section a {
             margin: 0 15px;
