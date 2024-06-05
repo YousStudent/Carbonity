@@ -60,6 +60,12 @@
             text-align: center;
             position: relative;
             overflow: hidden;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .section.in-view {
+            opacity: 1;
         }
 
         .section h2 {
@@ -537,6 +543,28 @@
             var re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
             return re.test(email);
         }
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var sections = document.querySelectorAll('.section');
+
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+
+
+        
+
+        
     </script>
 </body>
 
