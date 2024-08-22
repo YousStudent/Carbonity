@@ -471,7 +471,7 @@
                 <button type="submit">S'inscrire</button>
             </form>
         </div>
-        <button class="contact-link" id="contactButton">Nous contacter directement</button>
+        <button class="contact-link" id="contactButton" onclick="window.location.href='mailto:contact@carbonity.co';">Nous contacter directement</button>
     </section>
 
     <div class="separator"></div>
@@ -535,23 +535,23 @@
             }
         };
 
+
         document.getElementById('emailForm').onsubmit = function (event) {
             event.preventDefault();
             var email = document.getElementById('email').value;
             if (validateEmail(email)) {
-                alert('Merci de vous être inscrit !');
-                document.getElementById('email').value = '';
+                window.location.href = 'mailto:contact@carbonity.co?subject=Nouvelle inscription&body=Un nouvel utilisateur s\'est inscrit avec l\'email: ' + email;
             } else {
                 alert('Veuillez entrer une adresse email valide.');
             }
         };
-
+    
         function validateEmail(email) {
             var re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
             return re.test(email);
         }
 
-
+        
         document.addEventListener('DOMContentLoaded', function() {
             var sections = document.querySelectorAll('.section');
 
@@ -568,10 +568,6 @@
             });
         });
 
-
-        
-
-        
     </script>
 </body>
 
