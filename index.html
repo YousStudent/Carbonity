@@ -540,7 +540,7 @@
             event.preventDefault();
             var email = document.getElementById('email').value;
             if (validateEmail(email)) {
-                window.location.href = 'mailto:contact@carbonity.co?subject=Nouvelle inscription&body=Un nouvel utilisateur s\'est inscrit avec l\'email: ' + email;
+                window.location.href = 'mailto:contact@carbonity.co?subject=Nouvelle%20inscription&body=Un%20nouvel%20utilisateur%20s\'est%20inscrit%20avec%20l\'email%3A%20' + encodeURIComponent(email);
             } else {
                 alert('Veuillez entrer une adresse email valide.');
             }
