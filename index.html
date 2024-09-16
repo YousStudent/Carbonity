@@ -99,7 +99,10 @@
         /* Section 3: Notre offre */
         .offer-section {
             padding: 60px 20px;
-            text-align: center;
+            display: flex;
+            justify-content: center; /* Centre les offres horizontalement */
+            flex-wrap: wrap; /* Permet d'ajuster les offres sur plusieurs lignes */
+            gap: 20px; /* Espacement entre les offres */
             position: relative;
             overflow: hidden;
         }
@@ -113,8 +116,8 @@
             padding: 20px;
             margin: 20px;
             display: inline-block;
-            width: calc(45% - 40px);
-            height: 300px;
+            width: 30%; /* Réduit la largeur à 30% */
+            height: 500px; /* Augmente la hauteur à 500px */
             box-sizing: border-box;
             position: relative;
         }
@@ -443,7 +446,7 @@
     <!-- Section 3: Notre offre -->
     <section class="offer-section highlight">
         <h2>Notre offre</h2>
-        <div class="offer" style="background-image: url('https://i.ibb.co/m6gWGgd/FORMATION');"></div>
+        <div class="offer" style="background-image: url('https://i.ibb.co/m6gWGgd/FORMATION.png');"></div>
         <div class="offer" style="background-image: url('https://i.ibb.co/X7GcLkZ/IRVE.png');"></div>
         <div class="offer" style="background-image: url('https://i.ibb.co/n670h3D/CONSEIL.png');"></div>
     </section>
