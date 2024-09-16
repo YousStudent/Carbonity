@@ -98,26 +98,35 @@
             
         /* Section 3: Notre offre */
         .offer-section {
-            padding: 60px 20px;
+            /*padding: 60px 20px;*/
             display: flex;
             justify-content: center; /* Centre les offres horizontalement */
-            /*flex-wrap: wrap;  Permet d'ajuster les offres sur plusieurs lignes */
+            flex-wrap: wrap;  /*Permet d'ajuster les offres sur plusieurs lignes */
+            align-items: center;
             gap: 20px; /* Espacement entre les offres */
-            position: relative;
-            overflow: hidden;
+            /*position: relative;
+            overflow: hidden;*/
+        }
+
+        .offer-section h2 {
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 40px;
+            width: 100%;
         }
 
         .offer-section .offer {
             background-color: #ffffff;
-            background-size: cover;
+            background-size: contain; /* Réduire le zoom de l'image */
+            background-repeat: no-repeat;
             background-position: center;
             border: 1px solid #ccc;
             border-radius: 15px;
             padding: 20px;
             margin: 20px;
             display: inline-block;
-            width: 20%; /* Réduit la largeur à 30% */
-            height: 600px; /* Augmente la hauteur à 500px */
+            width: calc(30% - 40px); /* Réduire la largeur pour les centrer */
+            height: 400px; /* Augmenter la hauteur pour plus de contenu */
             box-sizing: border-box;
             position: relative;
         }
